@@ -1,0 +1,13 @@
+Source: zabbix-check-postfix
+Maintainer: Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-postfix
+Architecture: all
+Depends: zabbix-agent (>=2.0), pflogsumm, logtail
+Description: zabbix-agent postfix passiv check
+    This checks look as Bounced, Bytes Delivered, 
+    Bytes Received, Deferred, Delivered, Discarded, 
+    Forwarded, Held, Mail Queue, Received, Rejected, Reject Warnings

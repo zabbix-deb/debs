@@ -1,0 +1,50 @@
+zabbix-check-postfix (0.1~dev8) precise; urgency=low
+
+  * Bugfix Restart zabbix-agent
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 10 Dec 2014 09:10:15 +0100
+
+zabbix-check-postfix (0.1~dev7) squeeze; urgency=low
+
+  * Bugfix Lenny pflogsumm 
+  * add nice and ionice
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Thu, 14 Aug 2014 08:53:11 +0200
+
+zabbix-check-postfix (0.1~dev6) squeeze; urgency=low
+
+  * Bugfix useragent_postfix 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 13 Aug 2014 12:21:00 +0200
+
+zabbix-check-postfix (0.1~dev5) squeeze; urgency=low
+
+  * Bugfix rename postinst
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 13 Aug 2014 10:48:29 +0200
+
+zabbix-check-postfix (0.1~dev4) squeeze; urgency=low
+
+  * Add cron.d
+  * mv sbin to bin 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 13 Aug 2014 10:34:53 +0200
+
+zabbix-check-postfix (0.1~dev3) squeeze; urgency=low
+
+  * Check Restart 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 13 Aug 2014 08:20:34 +0200
+
+zabbix-check-postfix (0.1~dev2) squeeze; urgency=low
+
+  * Bugfixes restart service
+  * fix chmod 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 13 Aug 2014 08:13:06 +0200
+
+zabbix-check-postfix (0.1~dev1) squeeze; urgency=low
+
+  * Initial release.
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Tue, 12 Aug 2014 12:21:27 +0200
