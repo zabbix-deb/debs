@@ -1,0 +1,3 @@
+Dieses Paket soll das dateisystem auslesen und ausgeben ob ein filesystem check beim nächsten reboot ansteht.
+
+* filsystem check cound days
