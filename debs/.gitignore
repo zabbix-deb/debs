@@ -1,0 +1,10 @@
+*~
+*.swp
+
+*/debian/files
+*/debian/*.log
+*/debian/*.substvars
+
+*.deb
+*.build
+*.changes
