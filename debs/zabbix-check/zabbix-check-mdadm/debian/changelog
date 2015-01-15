@@ -1,0 +1,12 @@
+zabbix-check-mdadm (0.2) precise; urgency=low
+
+  *  Bugfix: export var
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 29 Oct 2014 09:46:58 +0100
+
+zabbix-check-mdadm (0.1) squeeze; urgency=low
+
+  * Initial release.
+  * check mdadm
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 15 Oct 2014 14:25:58 +0200

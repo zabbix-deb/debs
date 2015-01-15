@@ -1,0 +1,7 @@
+etc
+etc/zabbix
+etc/zabbix/zabbix_agentd.d
+etc/zabbix/zabbix_agentd.d/mdadm.conf
+usr
+usr/bin
+usr/bin/zabbix-check-mdadm

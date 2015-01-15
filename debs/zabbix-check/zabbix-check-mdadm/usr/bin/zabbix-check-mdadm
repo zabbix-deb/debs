@@ -1,0 +1,9 @@
+#!/bin/bash
+sum=$(mktemp)
+echo 0 > $sum
+grep ^md /proc/mdstat| awk '{print $1}' | while read line; do 
+	echo $(( $(grep -A1 ^$line /proc/mdstat | grep -o _ | wc -w) + $(cat $sum) )) > $sum
+done
+
+cat $sum
+rm $sum

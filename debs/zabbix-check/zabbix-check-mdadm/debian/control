@@ -1,0 +1,12 @@
+Source: zabbix-check-mdadm
+Maintainer: Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-mdadm
+Architecture: all
+Depends: lsb-base, mdadm, zabbix-agent
+Description: cubos zabix mdadm check
+  check the status of mdadm
+
