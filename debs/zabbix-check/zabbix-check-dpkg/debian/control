@@ -1,0 +1,11 @@
+Source: zabbix-check-dpkg
+Maintainer: Christoph Hueffelmann <chr@istoph.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-dpkg
+Architecture: all
+Description: zabbix check dpkg status
+  checking the status of the debian pakagemend system
+

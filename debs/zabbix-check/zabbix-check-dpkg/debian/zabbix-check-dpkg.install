@@ -1,0 +1,9 @@
+etc
+etc/zabbix
+etc/zabbix/zabbix_agentd.d
+etc/zabbix/zabbix_agentd.d/userparameter_dpkg.sh
+etc/cron.d
+etc/cron.d/zabbix-check-dpkg
+usr
+usr/bin
+usr/bin/zabbix-check-dpkg.sh

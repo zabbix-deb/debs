@@ -1,0 +1,24 @@
+zabbix-check-dpkg (0.1~dev4) precise; urgency=low
+
+  * Add zabbix-agent restart
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 14 Jan 2015 14:53:49 +0100
+
+zabbix-check-dpkg (0.1~dev3) precise; urgency=low
+
+  * Add cash in postinst  
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 14 Jan 2015 12:14:16 +0100
+
+zabbix-check-dpkg (0.1~dev2) precise; urgency=low
+
+  * cron random sleep
+  * check if update running 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 14 Jan 2015 10:25:56 +0100
+
+zabbix-check-dpkg (0.1~dev1) precise; urgency=low
+
+  * Initial release.
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Thu, 11 Dec 2014 14:00:06 +0100
