@@ -1,0 +1,1 @@
+http://dev.aperto.fr/projects/zabbixextensions/wiki/DNS_blacklists_%28DNSBL%29_monitoring
