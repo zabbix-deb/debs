@@ -1,0 +1,32 @@
+zabbix-smartmon (1:0.1) precise; urgency=low
+
+  * Add zabbix_smartmon_template.xml to doc
+  * Release
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Fri, 16 Jan 2015 18:04:00 +0100
+
+zabbix-smartmon (1:0.1~dev4) precise; urgency=low
+
+  * Add option to read scale "Value"
+  * Fix an error in postinst
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Fri, 16 Jan 2015 17:11:49 +0100
+
+zabbix-smartmon (1:0.1~dev3) precise; urgency=low
+
+  * Fix regex line in get_smart.py
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Fri, 16 Jan 2015 13:55:52 +0100
+
+zabbix-smartmon (1:0.1~dev2) precise; urgency=low
+
+  * Some bugfixes
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Fri, 16 Jan 2015 11:54:00 +0100
+
+zabbix-smartmon (1:0.1~dev1) precise; urgency=low
+
+  * Initial release.
+  * Check SMART parameter
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Thu, 15 Jan 2015 17:51:43 +0100

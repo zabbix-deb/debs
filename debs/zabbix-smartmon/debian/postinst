@@ -1,0 +1,29 @@
+#!/bin/sh -e
+
+case "$1" in
+    configure)
+
+	chmod -v +x /usr/sbin/get_smart.py
+	chmod -v +x /usr/sbin/hdd_discover.py
+	if [ "$(cat /etc/sudoers | grep get_smart | wc -l)" = "0" ]; then
+        	echo 'zabbix ALL=NOPASSWD:/usr/sbin/get_smart.py,/usr/sbin/hdd_discover.py' >> /etc/sudoers
+	fi
+        if which invoke-rc.d >/dev/null 2>&1; then
+                invoke-rc.d zabbix-agent stop
+		invoke-rc.d zabbix-agent start
+        else
+                /etc/init.d/zabbix-agent stop
+		/etc/init.d/zabbix-agent stop
+        fi
+        ;;
+
+    abort-upgrade|abort-deconfigure|abort-remove)
+	;;
+
+    *)
+	echo "$0 called with unknown argument \`$1'" 1>&2
+	exit 1
+	;;
+esac
+
+exit 0
