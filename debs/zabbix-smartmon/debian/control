@@ -7,7 +7,7 @@ Standards-Version: 3.8.4
 Package: zabbix-smartmon
 Architecture: all
 Pre-Depends: sudo, zabbix-agent
-Depends: ucf, lsb-base, python, smartmontools
+Depends: ucf, lsb-base, python (>= 2.6), smartmontools
 Description: SMART monitoring script for zabbix
  Provides a script, to monitore the smart status of an hdd
  and make the data readable for zabbix-agent.
