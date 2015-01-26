@@ -1,3 +1,10 @@
+zabbix-smartmon (1:0.2) precise; urgency=low
+
+  * change get_smart.py in order to compatible with python2.6 and thus lucid
+  * change dependency to python2.6 later or equal
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Thu, 22 Jan 2015 11:46:25 +0100
+
 zabbix-smartmon (1:0.1) precise; urgency=low
 
   * Add zabbix_smartmon_template.xml to doc

@@ -13,8 +13,10 @@ if len(sys.argv) == 4:
 else:
     smart_value = 0
 
-output = subprocess.check_output(["sudo", "smartctl", "-A", "/dev/{0}".format(hdd)])
-for line in output.split("\n"):
+output = subprocess.Popen(['sudo', 'smartctl', '-A', '/dev/{0}'.format(hdd)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+(stdout, stderr) = output.communicate()
+
+for line in stdout.split("\n"):
     match = smart_key_re.match(line)
     if match:
         if match.group(1).lower() == smart_key.lower():
