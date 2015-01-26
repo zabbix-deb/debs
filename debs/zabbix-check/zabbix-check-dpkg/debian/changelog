@@ -1,3 +1,10 @@
+zabbix-check-dpkg (0.1~dev5) precise; urgency=low
+
+  * Bugfix: checkrun 
+  * Add: stderr to /dev/null 
+  
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Fri, 23 Jan 2015 11:30:30 +0100
+
 zabbix-check-dpkg (0.1~dev4) precise; urgency=low
 
   * Add zabbix-agent restart
