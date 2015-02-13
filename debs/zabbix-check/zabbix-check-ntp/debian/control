@@ -1,0 +1,12 @@
+Source: zabbix-check-ntp
+Maintainer: Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-ntp
+Architecture: all
+Depends: lsb-base, zabbix-agent, ntp
+Description: cubos zabix check ntp offset
+  check the status of ntp
+

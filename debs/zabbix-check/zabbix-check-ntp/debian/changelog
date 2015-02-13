@@ -1,0 +1,5 @@
+zabbix-check-ntp (0.1~dev1) precise; urgency=low
+
+  * Initial release.
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Fri, 13 Feb 2015 11:10:19 +0100
