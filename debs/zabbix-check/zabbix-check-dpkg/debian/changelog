@@ -1,3 +1,9 @@
+zabbix-check-dpkg (0.1~dev6) precise; urgency=low
+
+  * Add: autoremove 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Mon, 30 Mar 2015 10:49:02 +0200
+
 zabbix-check-dpkg (0.1~dev5) precise; urgency=low
 
   * Bugfix: checkrun 
