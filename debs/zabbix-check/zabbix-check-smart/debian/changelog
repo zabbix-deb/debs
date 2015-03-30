@@ -1,3 +1,9 @@
+zabbix-check-smart (1:0.2.1) precise; urgency=medium
+
+  * rename package
+
+ -- Sebastian Hübner <shuebner@benhur.de>  Wed, 04 Mar 2015 18:54:57 +0100
+
 zabbix-smartmon (1:0.2) precise; urgency=low
 
   * change get_smart.py in order to compatible with python2.6 and thus lucid
