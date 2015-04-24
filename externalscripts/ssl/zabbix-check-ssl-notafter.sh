@@ -10,7 +10,7 @@ if [ "$port" = "" ]; then
 	port="443"
 fi
 
-d=$(echo | openssl s_client -connect $domain:$port 2>/dev/null | openssl x509 -noout -dates | grep notA | awk -F'=' '{print$2}')
+d=$(echo | openssl s_client -servername $domain -connect $domain:$port 2>/dev/null | openssl x509 -noout -dates | grep notA | awk -F'=' '{print$2}')
 
 let t=$(date -d "$d" "+%s")-$(date "+%s")
 echo $t
