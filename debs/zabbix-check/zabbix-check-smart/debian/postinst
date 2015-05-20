@@ -9,11 +9,11 @@ case "$1" in
         	echo 'zabbix ALL=NOPASSWD:/usr/sbin/get_smart.py,/usr/sbin/hdd_discover.py' >> /etc/sudoers
 	fi
         if which invoke-rc.d >/dev/null 2>&1; then
-                invoke-rc.d zabbix-agent stop
+                invoke-rc.d zabbix-agent stop || true
 		invoke-rc.d zabbix-agent start
         else
-                /etc/init.d/zabbix-agent stop
-		/etc/init.d/zabbix-agent stop
+                /etc/init.d/zabbix-agent stop || true
+		/etc/init.d/zabbix-agent start
         fi
         ;;
 
