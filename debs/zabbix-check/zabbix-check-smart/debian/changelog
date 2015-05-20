@@ -1,6 +1,7 @@
 zabbix-check-smart (1:0.2.2) precise; urgency=low
 
-  * Bugfix: postinst 
+  * Bugfix: postinst
+  * Fix:    postrm
 
  -- Christoph Hueffelmann <chr@istoph.de>  Wed, 20 May 2015 10:53:14 +0200
 

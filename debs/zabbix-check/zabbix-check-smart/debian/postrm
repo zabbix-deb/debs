@@ -10,10 +10,10 @@ case "$1" in
 	chmod 440 /etc/sudoers
 
 	if which invoke-rc.d >/dev/null 2>&1; then
-     		invoke-rc.d zabbix-agent stop
+     		invoke-rc.d zabbix-agent stop || true
 		invoke-rc.d zabbix-agent start
      	else
-     		/etc/init.d/zabbix-agent stop
+     		/etc/init.d/zabbix-agent stop || true
 		/etc/init.d/zabbix-agent start
      	fi
     ;;
