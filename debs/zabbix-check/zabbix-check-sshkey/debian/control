@@ -1,0 +1,12 @@
+Source: zabbix-check-sshkey
+Maintainer: Christoph Hueffelmann <chr@istoph.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-sshkey
+Architecture: all
+Pre-Depends: sudo, zabbix-agent
+Description: zabbix check sshkey checksum
+  checking the checksums of the .ssh/authorized_keys
+
