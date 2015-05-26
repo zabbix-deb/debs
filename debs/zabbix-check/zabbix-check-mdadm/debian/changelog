@@ -1,3 +1,9 @@
+zabbix-check-mdadm (0.2.1) precise; urgency=low
+
+  * Feature: add application to template
+
+ -- Sebastian Hübner <shuebne@benhur.de>  Tue, 26 May 2015 09:43:22 +0200
+
 zabbix-check-mdadm (0.2) precise; urgency=low
 
   *  Bugfix: export var
