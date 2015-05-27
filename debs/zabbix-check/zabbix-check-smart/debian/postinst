@@ -9,9 +9,11 @@ case "$1" in
         grep -v 'get_smart.py' /etc/sudoers > /etc/.sudoers
         mv /etc/.sudoers /etc/sudoers
         chmod 440 /etc/sudoers
-    elif [ "$(cat /etc/sudoers | grep 'zabbix_check_smart_get.py' | wc -l)" -eq "0" ]; then
+    fi
+    if [ "$(cat /etc/sudoers | grep 'zabbix_check_smart_get.py' | wc -l)" -eq "0" ]; then
         echo 'zabbix ALL=NOPASSWD:/usr/sbin/zabbix_check_smart_get.py,/usr/sbin/zabbix_check_smart_discover.py' >> /etc/sudoers
     fi
+
     echo "Enable SMART if disabled"
     for hdd in $(ls /dev/ | egrep ^[hs]{1}d[a-z]{1}$); do
         if [ "$(smartctl -i /dev/$hdd | grep Disabled | wc -l)" -gt "0" ]; then
@@ -19,6 +21,7 @@ case "$1" in
             echo "Enabled SMART on $hdd"
         fi
     done
+
     if which invoke-rc.d >/dev/null 2>&1; then
         invoke-rc.d zabbix-agent stop || true
         invoke-rc.d zabbix-agent start
