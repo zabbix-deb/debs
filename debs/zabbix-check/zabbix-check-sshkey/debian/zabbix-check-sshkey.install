@@ -1,0 +1,11 @@
+etc
+etc/zabbix
+etc/zabbix/zabbix_agentd.d
+etc/zabbix/zabbix_agentd.d/sshkey.conf
+usr
+usr/sbin
+usr/sbin/zabbix-check-sshkey.sh
+usr/share
+usr/share/doc
+usr/share/doc/zabbix-check-sshkey
+usr/share/doc/zabbix-check-sshkey/zabbix_check_sshkey_template.xml

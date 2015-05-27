@@ -3,5 +3,9 @@ etc/zabbix
 etc/zabbix/zabbix_agentd.d
 etc/zabbix/zabbix_agentd.d/mdadm.conf
 usr
+usr/share
+usr/share/doc
+usr/share/doc/zabbix-check-mdadm
+usr/share/doc/zabbix-check-mdadm/mdadm_passive_checks_zabbix_template.xml
 usr/bin
 usr/bin/zabbix-check-mdadm

@@ -2,6 +2,8 @@
 *.swp
 
 debs/zabbix-check/zabbix-check-*/debian/zabbix-check-*
+!debs/zabbix-check/zabbix-check-*/debian/zabbix-check-*.install
+
 
 */debian/files
 */debian/*.log
