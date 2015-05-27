@@ -1,3 +1,9 @@
+zabbix-check-smart (1:0.3.1) precise; urgency=low
+
+  * Bugfix: fix wrong if statement, which caused that no entry is insert into sudoers if old statement was found
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Thu, 28 May 2015 00:02:05 +0200
+
 zabbix-check-smart (1:0.3) precise; urgency=low
 
   * Feature: renamed scripts to zabbix_check_smart_*
