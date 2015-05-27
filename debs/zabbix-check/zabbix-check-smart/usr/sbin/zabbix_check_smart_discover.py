@@ -4,7 +4,7 @@ import json
 import re
 
 hdd_list = []
-hdd_pattern = re.compile(r'^[sv]{1}d[a-z]{1}$')
+hdd_pattern = re.compile(r'^[hsv]{1}d[a-z]{1}$')
 for name in os.listdir("/dev/"):
     match = hdd_pattern.match(name)
     if match:

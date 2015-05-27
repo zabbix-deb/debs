@@ -5,17 +5,23 @@ case "$1" in
     ;;
     remove|purge)
 
-	grep -v 'get_smart.py' /etc/sudoers > /etc/.sudoers
-	mv /etc/.sudoers /etc/sudoers
-	chmod 440 /etc/sudoers
+    if [ "$(cat /etc/sudoers | grep 'get_smart.py' | wc -l)" -ge "1" ]; then
+        grep -v 'get_smart.py' /etc/sudoers > /etc/.sudoers
+        mv /etc/.sudoers /etc/sudoers
+        chmod 440 /etc/sudoers
+    fi
 
-	if which invoke-rc.d >/dev/null 2>&1; then
-     		invoke-rc.d zabbix-agent stop || true
-		invoke-rc.d zabbix-agent start
-     	else
-     		/etc/init.d/zabbix-agent stop || true
-		/etc/init.d/zabbix-agent start
-     	fi
+    grep -v 'zabbix_check_smart_get.py' /etc/sudoers > /etc/.sudoers
+    mv /etc/.sudoers /etc/sudoers
+    chmod 440 /etc/sudoers
+
+    if which invoke-rc.d >/dev/null 2>&1; then
+        invoke-rc.d zabbix-agent stop || true
+        invoke-rc.d zabbix-agent start
+    else
+        /etc/init.d/zabbix-agent stop || true
+        /etc/init.d/zabbix-agent start
+    fi
     ;;
 
     *)

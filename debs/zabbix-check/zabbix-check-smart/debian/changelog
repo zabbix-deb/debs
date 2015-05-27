@@ -1,7 +1,15 @@
+zabbix-check-smart (1:0.3) precise; urgency=low
+
+  * Feature: renamed scripts to zabbix_check_smart_*
+  * Feature: show help if no arguments given to zabbix_check_smart_get.py
+  * Bugfix:  if smart is disabled, then it will be activate via postinst
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Wed, 27 May 2015 09:47:41 +0200
+
 zabbix-check-smart (1:0.2.2) precise; urgency=low
 
   * Bugfix: postinst
-  * Fix:    postrm
+  * Bugfix: postrm
 
  -- Christoph Hueffelmann <chr@istoph.de>  Wed, 20 May 2015 10:53:14 +0200
 
@@ -9,7 +17,7 @@ zabbix-check-smart (1:0.2.1) precise; urgency=medium
 
   * rename package
 
- -- Sebastian Hübner <shuebner@benhur.de>  Wed, 04 Mar 2015 18:54:57 +0100
+ -- Sebastian Huebner <shuebner@benhur.de>  Wed, 04 Mar 2015 18:54:57 +0100
 
 zabbix-smartmon (1:0.2) precise; urgency=low
 
