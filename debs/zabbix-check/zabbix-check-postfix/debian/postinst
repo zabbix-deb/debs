@@ -30,22 +30,23 @@ case "$1" in
   configure)
 	chmod -v +x /usr/bin/zabbix-check-postfix.sh
 
-	#TODO: if runing zabbix-agent
-	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
-		invoke-rc.d zabbix-agent stop 2&>1 >/dev/null || true
-		invoke-rc.d zabbix-agent start || true
+	if which invoke-rc.d >/dev/null 2>&1; then
+        	invoke-rc.d zabbix-agent stop || true
+		invoke-rc.d zabbix-agent start
 	else
-		/etc/init.d/zabbix-agent restart || true
-	fi	
+		/etc/init.d/zabbix-agent stop || true
+		/etc/init.d/zabbix-agent start
+	fi
   ;;
 
   abort-upgrade|abort-remove|abort-deconfigure)
 	echo "postinst: $1"
 	exit 0
   ;;
+
   *)
-    echo "postinst called with unknown argument \`$1'" >&2
-    exit 1
+	echo "postinst called with unknown argument \`$1'" >&2
+	exit 1
   ;;
 
 esac
