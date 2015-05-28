@@ -1,3 +1,7 @@
 Dieses Paket soll das dateisystem auslesen und ausgeben ob ein filesystem check beim nächsten reboot ansteht.
 
 * filsystem check cound days
+  dumpe2fs -h $(cat /proc/mounts | grep ^/ | grep " / " | awk '{print $1}')
+
+* lost found check
+  ls /backup/lost+found/ | wc -l
