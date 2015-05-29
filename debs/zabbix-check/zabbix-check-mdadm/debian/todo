@@ -1,0 +1,6 @@
+TODO
+
+* I've added discovery script which discovers MD's (/usr/sbin/zabbix-check-mdadm-discovery.py)
+** the same script as in zabbix-check-smart, only change the regex
+* if this is ok, change the template to use the discovery
+* benefit is, you see which md decreased in the frontend
