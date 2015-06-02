@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2015-01-16T16:56:59Z</date>
+    <date>2015-06-02T10:11:21Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -11,6 +11,7 @@
         <template>
             <template>Template App SMART</template>
             <name>Template App SMART</name>
+            <description/>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -48,7 +49,11 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <filter>:</filter>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
                     <lifetime>7</lifetime>
                     <description/>
                     <item_prototypes>
@@ -59,7 +64,7 @@
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>smart.raw[{#HDD},Current_Pending_Sector]</key>
-                            <delay>300</delay>
+                            <delay>900</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -145,7 +150,7 @@
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>smart.value[{#HDD},Raw_Read_Error_Rate]</key>
-                            <delay>300</delay>
+                            <delay>900</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -188,7 +193,7 @@
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>smart.raw[{#HDD},Reallocated_Sector_Ct]</key>
-                            <delay>300</delay>
+                            <delay>900</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -231,7 +236,7 @@
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>smart.value[{#HDD},Seek_Error_Rate]</key>
-                            <delay>300</delay>
+                            <delay>900</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -274,7 +279,7 @@
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>smart.raw[{#HDD},Start_Stop_Count]</key>
-                            <delay>300</delay>
+                            <delay>43200</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -356,7 +361,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template App SMART:smart.raw[{#HDD},Temperature_Celsius].min(5m)}&gt;50&amp;{Template App SMART:smart.raw[{#HDD},Temperature_Celsius].min(5m)}&lt;60</expression>
+                            <expression>{Template App SMART:smart.raw[{#HDD},Temperature_Celsius].min(5m)}&gt;50 and {Template App SMART:smart.raw[{#HDD},Temperature_Celsius].min(5m)}&lt;60</expression>
                             <name>HDD Temperature of {#HDD} higher than 50°C on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
@@ -401,7 +406,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template App SMART:smart.raw[{#HDD},Start_Stop_Count].last()}&gt;250</expression>
+                            <expression>{Template App SMART:smart.raw[{#HDD},Start_Stop_Count].change()}&gt;2</expression>
                             <name>{#HDD} has an unusual high Start_Stop_Count in {HOSTNAME}</name>
                             <url/>
                             <status>0</status>

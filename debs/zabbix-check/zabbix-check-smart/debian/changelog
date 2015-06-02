@@ -1,3 +1,9 @@
+zabbix-check-smart (1:0.3.2) precise; urgency=low
+
+  * Bugfix: change Start_Stop_Count Trigger in Template, cause there are HDD, which have a count greater than 200
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Tue, 02 Jun 2015 12:18:18 +0200
+
 zabbix-check-smart (1:0.3.1) precise; urgency=low
 
   * Bugfix: fix wrong if statement, which caused that no entry is insert into sudoers if old statement was found
