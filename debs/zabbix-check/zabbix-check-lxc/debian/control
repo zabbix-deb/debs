@@ -1,0 +1,12 @@
+Source: zabbix-check-lxc
+Maintainer: Sebastian Huebner <sebastian@hueb-ner.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-lxc
+Architecture: all
+Pre-Depends: sudo, zabbix-agent, lxc
+Description: LXC monitoring script for zabbix
+  Provide a script to monitore LinuX Containers
+

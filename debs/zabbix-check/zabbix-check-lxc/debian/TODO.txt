@@ -1,0 +1,2 @@
+- Discover erstellen für alle anderen User mit ~/.ssh/auth..
+- 

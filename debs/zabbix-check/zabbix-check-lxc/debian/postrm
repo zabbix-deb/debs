@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    remove|purge)
+
+        grep -v 'zabbix-check-sshkey' /etc/sudoers > /etc/.sudoers
+	mv /etc/.sudoers /etc/sudoers
+	chmod 440 /etc/sudoers
+
+	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+		invoke-rc.d zabbix-agent stop || true
+		invoke-rc.d zabbix-agent start
+	else
+		/etc/init.d/zabbix-agent stop || true
+                /etc/init.d/zabbix-agent start
+	fi
+
+    ;;
+
+    failed-upgrade|abort-install|abort-upgrade|disappear|upgrade)
+    ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+esac
+
+#DEBHELPER#
+
+exit 0
+
