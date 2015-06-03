@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2015-06-02T10:11:21Z</date>
+    <date>2015-06-03T12:46:50Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -407,7 +407,7 @@
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Template App SMART:smart.raw[{#HDD},Start_Stop_Count].change()}&gt;2</expression>
-                            <name>{#HDD} has an unusual high Start_Stop_Count in {HOSTNAME}</name>
+                            <name>Start_Stop_Count on {#HDD} increased by 2 in last 24h on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
