@@ -1,2 +1,2 @@
-- Discover erstellen für alle anderen User mit ~/.ssh/auth..
-- 
+- monitor CPU usage/load/time (/sys/fs/cgroup/cpuacct/lxc)
+- monitor ram usage
