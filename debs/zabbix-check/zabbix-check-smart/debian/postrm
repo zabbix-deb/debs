@@ -5,12 +5,6 @@ case "$1" in
     ;;
     remove|purge)
 
-    if [ "$(cat /etc/sudoers | grep 'get_smart.py' | wc -l)" -ge "1" ]; then
-        grep -v 'get_smart.py' /etc/sudoers > /etc/.sudoers
-        mv /etc/.sudoers /etc/sudoers
-        chmod 440 /etc/sudoers
-    fi
-
     grep -v 'zabbix_check_smart_get.py' /etc/sudoers > /etc/.sudoers
     mv /etc/.sudoers /etc/sudoers
     chmod 440 /etc/sudoers

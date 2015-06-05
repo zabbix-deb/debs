@@ -1,4 +1,10 @@
-zabbix-check-smart (1:0.3.3) precise; urgency=medium
+zabbix-check-smart (1:0.4) precise; urgency=low
+
+  * Feature: create a file in sudoers.d directory, instead of editing sudoers file
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Fri, 05 Jun 2015 13:38:54 +0200
+
+zabbix-check-smart (1:0.3.3) precise; urgency=low
 
   * Bugfix: change Start_Stop_Count trigger name
 
