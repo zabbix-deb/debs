@@ -1,5 +1,5 @@
 Source: zabbix-check-postfix
-Maintainer: Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>
+Maintainer: Christoph Hueffelmann <chr@istoph.de>
 Section: net
 Priority: optional
 Standards-Version: 3.8.4

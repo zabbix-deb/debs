@@ -1,4 +1,26 @@
-Author: Christoph Hüffelmann 2014
-Paket: cubos Internet GmbH 2014
-Quelle: http://lifeisabug.com/postfix-statistical-graphs-zabbix-using-passive-checks/
-Software: http://www.zabbix.com/
+This package is currently maintained by Christoph Hueffelmann <chr@istoph.de> 2014 
+
+Parts of this software are downloaded from: 
+http://lifeisabug.com/postfix-statistical-graphs-zabbix-using-passive-checks/ 
+
+It is designed for the software from: 
+http://www.zabbix.com/ 
+
+Copyright: 
+
+  Copyright (C) 2014 
+  Author: Nico <nico@lifeisabug.com> 
+
+  Copyright (C) 2014 
+  Changes: Christoph Hueffelmann <chr@istoph.de> 
+
+
+License: 
+
+  Zabbix is an enterprise-class open source distributed monitoring solution. 
+  This program is free software; you can redistribute it and/or modify 
+  it under the terms of the GNU General Public License version 2 as 
+  published by the Free Software Foundation. 
+
+  On Debian GNU/Linux systems, the complete text of the GNU General 
+  Public License can be found in `/usr/share/common-licenses/GPL-2'.

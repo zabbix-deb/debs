@@ -1,8 +1,9 @@
 zabbix-check-postfix (0.1~dev8) precise; urgency=low
 
   * Bugfix Restart zabbix-agent
+  * Update License, Copyright
 
- -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 10 Dec 2014 09:10:15 +0100
+ -- Christoph Hueffelmann <chr@istoph.de>  Wed, 10 Dec 2014 09:10:15 +0100
 
 zabbix-check-postfix (0.1~dev7) squeeze; urgency=low
 
