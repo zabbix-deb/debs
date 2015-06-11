@@ -5,7 +5,7 @@ case "$1" in
 
     chmod -v +x /usr/sbin/zabbix_check_smart_get.py
     chmod -v +x /usr/sbin/zabbix_check_smart_discover.py
-    chmod -v 440 /etc/sudoers.d/zabbix_check_smart
+    chmod -v 440 /etc/sudoers.d/zabbix-check-smart
     if [ "$(cat /etc/sudoers | grep 'zabbix_check_smart_get.py' | wc -l)" -ge "1" ]; then
         grep -v 'zabbix_check_smart_get.py' /etc/sudoers > /etc/.sudoers
         mv /etc/.sudoers /etc/sudoers
