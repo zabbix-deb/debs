@@ -1,3 +1,10 @@
+zabbix-check-smart (1:0.4.1) precise; urgency=low
+
+  * Bugfix: wrong filename in postinst
+  * copyright: added New BSD License 
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Fri, 12 Jun 2015 10:25:53 +0200
+
 zabbix-check-smart (1:0.4) precise; urgency=low
 
   * Feature: create a file in sudoers.d directory, instead of editing sudoers file
