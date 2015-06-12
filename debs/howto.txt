@@ -1,9 +1,10 @@
 export DEBEMAIL="Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>"
+export DEBEMAIL="Christoph Hueffelmann <chr@istoph.de>"
 dch -i
 
 paketname.install (Alle dateien die Installiert werden)
-find * | grep -v ^debian | grep -v "~" > debian/PAKETNAME.install
-find * | grep -v ^debian | grep -v "~" > debian/$(pwd|rev|cut -d '/' -f1|rev).install
+find * | grep -v ^debian | grep -v "~" | sort > debian/PAKETNAME.install
+find * | grep -v ^debian | grep -v "~" | sort > debian/$(pwd|rev|cut -d '/' -f1|rev).install
 
 LANG=C debuild -us -uc -b; dh clean
 
