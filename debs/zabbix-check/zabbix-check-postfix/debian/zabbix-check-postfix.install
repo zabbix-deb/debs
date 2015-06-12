@@ -5,11 +5,11 @@ etc/zabbix
 etc/zabbix/zabbix_agentd.d
 etc/zabbix/zabbix_agentd.d/userparameter_postfix.conf
 usr
+usr/bin
+usr/bin/zabbix-check-postfix.sh
 usr/share
 usr/share/doc
 usr/share/doc/zabbix-check-postfix
-usr/share/doc/zabbix-check-postfix/README
 usr/share/doc/zabbix-check-postfix/examples
-usr/share/doc/zabbix-check-postfix/examples/smtp_and_postfix_passive_checks_zabbix_template.xml
-usr/bin
-usr/bin/zabbix-check-postfix.sh
+usr/share/doc/zabbix-check-postfix/examples/zabbix-check-postfix-template.xml
+usr/share/doc/zabbix-check-postfix/README
