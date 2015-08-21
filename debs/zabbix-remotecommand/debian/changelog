@@ -1,0 +1,26 @@
+zabbix-remotecommand (0.1~dev5) precise; urgency=low
+
+  * Add start | stop Command
+    Der richtige weg ist aber: https://www.zabbix.com/documentation/2.4/manual/maintenance 
+  * Bugfix: sudoers
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Fri, 21 Aug 2015 12:01:10 +0200
+
+zabbix-remotecommand (0.1~dev3) precise; urgency=low
+
+  * Add new Services
+    * apache, smtp, pop3, imap, mysql, panel
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Thu, 20 Aug 2015 11:01:31 +0200
+
+zabbix-remotecommand (0.1~dev2) precise; urgency=low
+
+  * Bugfix: Doubble entry in sudoers 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 19 Aug 2015 15:29:14 +0200
+
+zabbix-remotecommand (0.1~dev1) lucid; urgency=low
+
+  * Initial release.
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 19 Aug 2015 15:22:37 +0200

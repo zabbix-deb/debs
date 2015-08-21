@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    remove|purge)
+
+	if [ -f "/etc/sudoers.d/zabbix-remotecommand" ]; then
+		rm -vf /etc/sudoers.d/zabbix-remotecommand
+	fi
+	
+	if grep "zabbix-remotecommand" /etc/sudoers >/dev/null; then
+		grep -v "zabbix-remotecommand" /etc/sudoers > /etc/.sudoers
+		mv /etc/.sudoers /etc/sudoers
+		chmod 0440 /etc/sudoers
+	fi
+
+	##DISABLE Remote Commands
+	sed -i 's/.*EnableRemoteCommands.*/#EnableRemoteCommands=1/g' /etc/zabbix/zabbix_agentd.conf
+	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+		invoke-rc.d zabbix-agent restart || true
+	else
+		/etc/init.d/zabbix-agent restart || true
+	fi
+
+    ;;
+
+    failed-upgrade|abort-install|abort-upgrade|disappear|upgrade)
+    ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+esac
+
+#DEBHELPER#
+
+exit 0
+
