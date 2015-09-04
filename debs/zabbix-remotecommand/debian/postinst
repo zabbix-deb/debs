@@ -36,8 +36,11 @@ case "$1" in
 
 	## Logdatei anlegen
 	mkdir -p /var/log/zabbix/
-	echo "install __NEW_VERSION__" > /var/log/zabbix/zabbix-rc.log
-	chown zabbix:zabbix /var/log/zabbix/zabbix-rc.log
+	if [ -e /var/log/zabbix/zabbix-rc.log ]; then
+		mv -v /var/log/zabbix/zabbix-rc.log /var/log/zabbix/zabbix_rc.log
+	fi
+	echo "install new version" >> /var/log/zabbix/zabbix_rc.log
+	chown zabbix:zabbix /var/log/zabbix/zabbix_rc.log
 
   ;;
 

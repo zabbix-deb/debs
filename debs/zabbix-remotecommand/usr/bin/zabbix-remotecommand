@@ -24,7 +24,7 @@ fi
 function log() {
 	#TODO: pipe
 	echo $1
-	echo "$(date) $1" >> /var/log/zabbix/zabbix-rc.log
+	echo "$(date) $1" >> /var/log/zabbix/zabbix_rc.log
 }
 
 function init() {
@@ -34,17 +34,17 @@ function init() {
 	#TODO: check systemd
 
 	if which service >/dev/null 2>&1; then
-		service $deamon $state 2>&1 | tee -a /var/log/zabbix/zabbix-rc.log 
+		service $deamon $state 2>&1 | tee -a /var/log/zabbix/zabbix_rc.log 
 		s=$?
 		log "service $deamon $state ($s)"
 		return $s
 	elif which invoke-rc.d >/dev/null 2>&1; then
-		invoke-rc.d $deamon $state 2>&1 | tee -a /var/log/zabbix/zabbix-rc.log
+		invoke-rc.d $deamon $state 2>&1 | tee -a /var/log/zabbix/zabbix_rc.log
 		s=$?
 		log "invoke-rc.d $deamon $state ($s)"
 		return $s
 	else
-		/etc/init.d/$deamon $state 2>&1 | tee -a /var/log/zabbix/zabbix-rc.log
+		/etc/init.d/$deamon $state 2>&1 | tee -a /var/log/zabbix/zabbix_rc.log
 		s=$?
 		log "/etc/init.d/$deamon $state ($s)"
 		return $s
