@@ -1,3 +1,10 @@
+zabbix-remotecommand (0.1~dev6) precise; urgency=low
+
+  * add systemd check
+  * move sudoers entry to a file in sudoers.d
+
+ -- Sebastian Huebner <sebastian@hueb-ner.de>  Thu, 10 Sep 2015 13:34:35 +0200
+
 zabbix-remotecommand (0.1~dev5) precise; urgency=low
 
   * Add start | stop Command

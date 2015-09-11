@@ -1,6 +1,3 @@
 TODO:
 
-EnableRemoteCommands=1
-
-sudo 
-zabbix ALL=NOPASSWD: /usr/bin/zabbix-remotecommand
+* check rights of zabbix user
