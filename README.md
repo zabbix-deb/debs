@@ -1,5 +1,5 @@
 # debs
-Debian package for Zabbix Server Client and Proxy
+Debian/Ubuntu extension packages for Zabbix Agent, Proxy and Server
 
 Dokumentation:
 
@@ -8,5 +8,5 @@ Dokumentation:
 
 Repository for Debian packages:
 
-* http://repository.chr.istoph.de/
-* http://blog.chr.istoph.de/repository/
+  * http://repository.chr.istoph.de/
+  * http://blog.chr.istoph.de/repository/
