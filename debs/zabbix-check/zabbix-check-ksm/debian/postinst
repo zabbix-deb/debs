@@ -1,0 +1,31 @@
+#!/bin/sh -e
+
+case "$1" in
+    configure)
+
+    chmod +x /usr/sbin/zabbix_check_ksm
+    chmod 440 /etc/sudoers.d/zabbix-check-ksm
+
+    if [ "$(cat /sys/kernel/mm/ksm/run)" -ne "1" ]; then
+        echo "!!! KSM not active !!!"
+    fi
+
+    if which invoke-rc.d >/dev/null 2>&1; then
+        invoke-rc.d zabbix-agent stop || true
+        invoke-rc.d zabbix-agent start
+    else
+        /etc/init.d/zabbix-agent stop || true
+        /etc/init.d/zabbix-agent start
+    fi
+    ;;
+
+    abort-upgrade|abort-deconfigure|abort-remove)
+    ;;
+
+    *)
+    echo "$0 called with unknown argument \`$1'" 1>&2
+    exit 1
+    ;;
+esac
+
+exit 0
