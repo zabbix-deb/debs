@@ -1,0 +1,12 @@
+Source: zabbix-check-fs
+Maintainer: Christoph Hueffelmann <chr@istoph.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-fs
+Architecture: all
+Depends: lsb-base, zabbix-agent
+Description: monitor zabbix filesystem infomations
+  first if fsck start at reboot
+
