@@ -21,11 +21,7 @@ case "$1" in
 
   configure)
 
-	## ADD ROOT PRIVILIGATES
-	if ! grep zabbix-remotecommand /etc/sudoers >/dev/null; then 
-		echo "zabbix ALL=NOPASSWD: /usr/bin/zabbix-remotecommand" >> /etc/sudoers
-	fi
-	
+    chmod 440 /etc/sudoers.d/zabbix-remotecommand
 	## Enable Remote Commands
 	sed -i 's/.*EnableRemoteCommands.*/EnableRemoteCommands=1/g' /etc/zabbix/zabbix_agentd.conf
 	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
@@ -61,4 +57,3 @@ esac
 #DEBHELPER#
 
 exit 0
-

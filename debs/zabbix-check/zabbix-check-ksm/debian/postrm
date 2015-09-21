@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+case "$1" in
+    failed-upgrade|abort-install|abort-upgrade|disappear|upgrade)
+    ;;
+    remove|purge)
+
+    if which invoke-rc.d >/dev/null 2>&1; then
+        invoke-rc.d zabbix-agent stop || true
+        invoke-rc.d zabbix-agent start
+    else
+        /etc/init.d/zabbix-agent stop || true
+        /etc/init.d/zabbix-agent start
+    fi
+    ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+esac
+exit 0

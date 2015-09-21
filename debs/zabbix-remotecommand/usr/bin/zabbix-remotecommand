@@ -4,15 +4,15 @@
 
 service=$1
 
-if [ "$service" = "" ]; then 
+if [ "$service" = "" ]; then
 	echo $0 service
 	echo $0 start | stop
 	exit 1
 fi
 
-if [ "$service" = "start" ]; then 
+if [ "$service" = "start" ]; then
 	rm /tmp/zabbix-remotecommand.stop
-	echo "$0 wird beim nächsten evend wieder ausgeführt :)"
+	echo "$0 wird beim nächsten event wieder ausgeführt :)"
 	exit 0
 fi
 if [ "$service" = "stop" ]; then
@@ -30,18 +30,16 @@ function log() {
 function init() {
 	deamon=$1
 	state=$2
-	
-	#TODO: check systemd
 
-	if which service >/dev/null 2>&1; then
-		service $deamon $state 2>&1 | tee -a /var/log/zabbix/zabbix_rc.log 
-		s=$?
-		log "service $deamon $state ($s)"
-		return $s
-	elif which invoke-rc.d >/dev/null 2>&1; then
+	if which invoke-rc.d >/dev/null 2>&1; then
 		invoke-rc.d $deamon $state 2>&1 | tee -a /var/log/zabbix/zabbix_rc.log
 		s=$?
 		log "invoke-rc.d $deamon $state ($s)"
+		return $s
+	elif which systemctl >/dev/null 2>&1 && [ -f /etc/systemd/system/*.wants/$deamon.service ]; then
+		systemctl $state $deamon.service 2>&1 | tee -a /var/log/zabbix/zabbix_rc.log
+		s=$?
+		log "systemctl $state $deamon.service ($s)"
 		return $s
 	else
 		/etc/init.d/$deamon $state 2>&1 | tee -a /var/log/zabbix/zabbix_rc.log
@@ -59,7 +57,7 @@ fi
 case $service in
     "apache")
 	log "apache2 restart"
-	
+
 	init apache2 stop
 	#TODO: ps axf | grep apache | wc -l || killall apache || reboot
 	init apache2 start
@@ -68,18 +66,18 @@ case $service in
     "ftp")
 	log "ftp restart"
 
-	if [ -x /etc/init.d/proftpd ]; then 
+	if [ -x /etc/init.d/proftpd ]; then
 		echo proftpd
 		init proftpd stop
 		init proftpd start
-	elif [ -x /etc/init.d/xinetd ]; then 
+	elif [ -x /etc/init.d/xinetd ]; then
 		echo xinetd
 		init xinetd stop
 		init xinetd start
 	else
 		echo default
 		init proftpd stop
-		init proftpd start	
+		init proftpd start
 	fi
 	;;
 

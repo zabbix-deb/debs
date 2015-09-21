@@ -1,0 +1,19 @@
+zabbix-check-ksm (1:1.0) precise; urgency=low
+
+  * add template
+  * Release
+
+ -- Sebastian Huebner <sebastian@hueb-ner.de>  Mon, 14 Sep 2015 15:11:27 +0200
+
+zabbix-check-ksm (1:1~dev2) precise; urgency=low
+
+  * check if ksm in running
+  * add sudo file
+
+ -- Sebastian Huebner <sebastian@hueb-ner.de>  Mon, 14 Sep 2015 14:42:11 +0200
+
+zabbix-check-ksm (1:1~dev1) precise; urgency=low
+
+  * Initial release.
+
+ -- Sebastian Huebner <sebastian@hueb-ner.de>  Mon, 14 Sep 2015 13:48:17 +0200
