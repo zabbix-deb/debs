@@ -7,3 +7,8 @@ etc/cron.d/zabbix-check-dpkg
 usr
 usr/bin
 usr/bin/zabbix-check-dpkg.sh
+usr/share
+usr/share/doc
+usr/share/doc/zabbix-check-dpkg
+usr/share/doc/zabbix-check-dpkg/examples
+usr/share/doc/zabbix-check-dpkg/examples/dpkg_passive_checks_zabbix_template.xml
