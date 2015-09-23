@@ -73,8 +73,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template App SSL:zabbix-check-ssllabs.sh[{HOSTNAME}].str(T)}#0 &
-{Template App SSL:zabbix-check-ssllabs.sh[{HOSTNAME}].str(A)}#0</expression>
+            <expression>{Template App SSL:zabbix-check-ssllabs.sh[{HOSTNAME}].str(A)}#0</expression>
             <name>SSLLABS Overall Rating</name>
             <url/>
             <status>0</status>
