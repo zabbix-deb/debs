@@ -1,3 +1,9 @@
+zabbix-check-dpkg (0.1~dev7) precise; urgency=low
+
+  * Add: apt.conf Post-Invoke 
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Thu, 01 Oct 2015 00:39:41 +0200
+
 zabbix-check-dpkg (0.1~dev6) precise; urgency=low
 
   * Add: autoremove 
