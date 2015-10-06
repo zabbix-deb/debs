@@ -1,69 +1,38 @@
 #!/bin/bash
-
-# Copyright (C) 2005 Mark Stingley
-# mark AT altsec.info
-
 # Copyright (C) 2015 Christoph Hüffelmann
 # christoph-hueffelmann@cubos-internet.de
 
-#TODO: übergabe ablaufzeit override inital ckeck
+host=$1
+cash=/var/cash/zabbix/zabbix-check-nmap
 
-IP=$1
-
-if [ ! "$IP" ]; then
+if [ ! "$host" ]; then
 
    echo "No IP address supplied"
-   exit 255
+   exit 1
 
 fi
 
 if [ ! -x "/usr/bin/nmap" ]; then
 
    echo "apt-get install nmap"
-   echo 255
+   exit 2
 
 fi
 
-BASEDIR=/var/cache/zabbix/check-ports 
-SCANDIR=$BASEDIR/scans
-[ ! -d $SCANDIR ] && mkdir -p $SCANDIR
-
-FILEDIR=$BASEDIR/files
-[ ! -d $FILEDIR ] && mkdir $FILEDIR
-
-CHANGED=0
-INITIAL=0
-
-if [ ! -f $SCANDIR/$IP.base ]; then
-
-   touch $SCANDIR/$IP.base
-   INITIAL=1
-
+if [ ! -d $cash ]; then
+	echo "## TODO: "
+	echo sudo mkdir -p $cash
+	echo sudo chown zabbix: $cash
+	exit 3
 fi
 
-nmap -T5 -sT -P0 $IP | grep -w open | sort | sed -e "s/ \\+/ /g" > $SCANDIR/$IP
 
-if [ $INITIAL -eq 1 ]; then
-
-   cat $SCANDIR/$IP > $SCANDIR/$IP.base
-   echo "Initial scan"
-   exit 0
-
-fi
-
-SCANTIME=`/bin/date +%Y%m%d-%H%M`
-DIFF=`/usr/bin/comm -23 $SCANDIR/$IP $SCANDIR/$IP.base`
-if [ "$DIFF" ]; then
-
-   DIFFSTR=`echo "$DIFF" | awk '{print $1}' | paste -s -d " " -`
-
-   echo "Scan $SCANTIME: NEW $DIFFSTR"
-   exit 1
-
+tmp=$(mktemp)
+nmap -T5 -sT -P0 $host | grep -w open | awk '{print $1}' > $tmp
+if [ -e $cash/$host  ]; then
+	diff -u $cash/$host $tmp | sed 1,3D | grep ^+ | awk -F '+' '{print $2}' | sed -e "s/ \\+/ /g" | paste -s -d " " -
+	rm $tmp
 else
-
-   echo "$SCANTIME: no change"
-   exit 0
-
+	echo -n "FIRST CHECK $host"
+	mv $tmp $cash/$host
 fi
-
