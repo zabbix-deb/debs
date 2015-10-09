@@ -1,0 +1,11 @@
+zabbix-check-confixx (0.1~dev2) precise; urgency=low
+
+  * Bugfix: cornjob  
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Thu, 08 Oct 2015 15:38:08 +0200
+
+zabbix-check-confixx (0.1~dev1) jessie; urgency=low
+
+  * Initial release.
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Thu, 08 Oct 2015 14:09:47 +0200
