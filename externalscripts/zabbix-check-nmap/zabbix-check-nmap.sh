@@ -28,6 +28,7 @@ fi
 
 
 tmp=$(mktemp)
+trap "rm -f $tmp" 0 1 2 5 15
 nmap -T5 -sT -P0 $host | grep -w open | awk '{print $1}' > $tmp
 if [ -e $cash/$host  ]; then
 	diff -u $cash/$host $tmp | sed 1,3D | grep ^+ | awk -F '+' '{print $2}' | sed -e "s/ \\+/ /g" | paste -s -d " " -
