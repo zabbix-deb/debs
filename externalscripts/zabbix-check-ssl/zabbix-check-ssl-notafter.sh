@@ -13,6 +13,7 @@ if [ "$port" = "" ]; then
 fi
 
 tmp=$(mktemp)
+trap "rm -f $tmp" 0 1 2 5 15
 case $port in
     21)
         #FTP
@@ -40,7 +41,7 @@ if ! grep -q "CERTIFICATE" $tmp; then
     echo | timeout $t openssl s_client -connect $domain:$port 2>/dev/null > $tmp
 fi
 
-if ! grep -q "CERTIFICATE" $tmp; then
+if grep -q "CERTIFICATE" $tmp; then
         d=$(cat $tmp | openssl x509 -noout -dates | grep notA | awk -F'=' '{print$2}')
 
         let t=$(date -d "$d" "+%s")-$(date "+%s")
