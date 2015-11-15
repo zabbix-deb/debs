@@ -26,14 +26,22 @@ if [ ! -d $cash ]; then
 	exit 3
 fi
 
+function scann() {
 
 tmp=$(mktemp)
-trap "rm -f $tmp" 0 1 2 5 15
 nmap -T5 -sT -P0 $host | grep -w open | awk '{print $1}' > $tmp
 if [ -e $cash/$host  ]; then
-	diff -u $cash/$host $tmp | sed 1,3D | grep ^+ | awk -F '+' '{print $2}' | sed -e "s/ \\+/ /g" | paste -s -d " " -
+	diff -u $cash/$host $tmp | sed 1,3D | grep ^+ | awk -F '+' '{print $2}' | sed -e "s/ \\+/ /g" | paste -s -d " " $cash/$host.diff
 	rm $tmp
 else
 	echo -n "FIRST CHECK $host"
 	mv $tmp $cash/$host
 fi
+
+}
+
+scann &
+if [ -s $cash/$host.diff ]; then
+	cat $cash/$host.diff
+fi
+exit 0
