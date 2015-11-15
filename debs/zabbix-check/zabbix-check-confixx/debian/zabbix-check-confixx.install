@@ -1,0 +1,15 @@
+etc
+etc/cron.d
+etc/cron.d/zabbix-check-confixx
+etc/zabbix
+etc/zabbix/zabbix_agentd.d
+etc/zabbix/zabbix_agentd.d/userparameter_confixx.sh
+usr
+usr/share
+usr/share/doc
+usr/share/doc/zabbix-check-confixx
+usr/share/doc/zabbix-check-confixx/examples
+usr/share/doc/zabbix-check-confixx/examples/zabbix-check-confixx_templates.xml
+usr/share/zabbix
+usr/share/zabbix/confixx
+usr/share/zabbix/confixx/lizenz

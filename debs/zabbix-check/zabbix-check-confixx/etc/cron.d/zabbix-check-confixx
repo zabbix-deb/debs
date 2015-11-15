@@ -1,0 +1,1 @@
+*/10 * * * * root /root/confixx/confixx_counterscript.pl 2>/dev/null; echo $? > /usr/share/zabbix/confixx/lizenz
