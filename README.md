@@ -1,7 +1,7 @@
 # debs
 Debian/Ubuntu extension packages for Zabbix Agent, Proxy and Server
 
-Dokumentation:
+Documentation:
 
   * http://blog.chr.istoph.de/tag/zabbix/
   * http://blog.hueb-ner.de/tag/zabbix/
