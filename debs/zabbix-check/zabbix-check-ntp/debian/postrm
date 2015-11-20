@@ -5,13 +5,14 @@ set -e
 case "$1" in
     remove|purge)
 
-	if which invoke-rc.d >/dev/null 2>&1; then
-		invoke-rc.d zabbix-agent restart
-	else
-		/etc/init.d/zabbix-agent restart
-	fi
-
-	;;
+        if which invoke-rc.d >/dev/null 2>&1; then
+            invoke-rc.d zabbix-agent stop || true
+            invoke-rc.d zabbix-agent start || true
+        else
+            /etc/init.d/zabbix-agent stop || true
+            /etc/init.d/zabbix-agent start || true
+        fi
+        ;;
 
     failed-upgrade|abort-install|abort-upgrade|disappear|upgrade)
 	;;
