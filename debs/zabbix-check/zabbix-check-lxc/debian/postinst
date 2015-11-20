@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for cubos-fw
+# postinst script for zabbix-check-lxc
 #
 # see: dh_installdeb(1)
 
@@ -21,17 +21,12 @@ case "$1" in
 
   configure)
 
-	chmod +x /usr/sbin/zabbix-check-sshkey.sh
-	if [ "$(cat /etc/sudoers | grep zabbix-check-sshkey | wc -l)" = "0" ]; then
-        	echo 'zabbix ALL=NOPASSWD:/usr/sbin/zabbix-check-sshkey.sh' >> /etc/sudoers
-	fi
-
 	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
 		invoke-rc.d zabbix-agent stop || true
-		invoke-rc.d zabbix-agent start
+		invoke-rc.d zabbix-agent start || true
 	else
 		/etc/init.d/zabbix-agent stop || true
-                /etc/init.d/zabbix-agent start
+        /etc/init.d/zabbix-agent start || true
 	fi
   ;;
 
