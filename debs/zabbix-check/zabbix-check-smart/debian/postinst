@@ -2,40 +2,41 @@
 
 case "$1" in
     configure)
+        chmod -v +x /usr/sbin/zabbix_check_smart_get.py
+        chmod -v +x /usr/sbin/zabbix_check_smart_discover.py
+        chmod -v 440 /etc/sudoers.d/zabbix-check-smart
 
-    chmod -v +x /usr/sbin/zabbix_check_smart_get.py
-    chmod -v +x /usr/sbin/zabbix_check_smart_discover.py
-    chmod -v 440 /etc/sudoers.d/zabbix-check-smart
-    if [ "$(cat /etc/sudoers | grep 'zabbix_check_smart_get.py' | wc -l)" -ge "1" ]; then
-        grep -v 'zabbix_check_smart_get.py' /etc/sudoers > /etc/.sudoers
-        mv /etc/.sudoers /etc/sudoers
-        chmod 440 /etc/sudoers
-    fi
-
-    echo "Enable SMART if disabled"
-    for hdd in $(ls /dev/ | egrep ^[hs]{1}d[a-z]{1}$); do
-        if [ "$(smartctl -i /dev/$hdd | grep Disabled | wc -l)" -gt "0" ]; then
-            smartctl -s on -q silent /dev/$hdd
-            echo "Enabled SMART on $hdd"
+        #remove old version of sudo rigets (pre 1:0.4)
+        if grep -q 'zabbix_check_smart_get.py' /etc/sudoers; then
+            grep -v 'zabbix_check_smart_get.py' /etc/sudoers > /etc/.sudoers
+            mv /etc/.sudoers /etc/sudoers
+            chmod 440 /etc/sudoers
         fi
-    done
 
-    if which invoke-rc.d >/dev/null 2>&1; then
-        invoke-rc.d zabbix-agent stop || true
-        invoke-rc.d zabbix-agent start
-    else
-        /etc/init.d/zabbix-agent stop || true
-        /etc/init.d/zabbix-agent start
-    fi
-    ;;
+        echo "Enable SMART if disabled"
+        for hdd in $(ls /dev/ | egrep ^[hs]{1}d[a-z]{1}$); do
+            if [ "$(smartctl -i /dev/$hdd | grep Disabled | wc -l)" -gt "0" ]; then
+                smartctl -s on -q silent /dev/$hdd
+                echo "Enabled SMART on $hdd"
+            fi
+        done
+
+        if which invoke-rc.d >/dev/null 2>&1; then
+            invoke-rc.d zabbix-agent stop || true
+            invoke-rc.d zabbix-agent start || true
+        else
+            /etc/init.d/zabbix-agent stop || true
+            /etc/init.d/zabbix-agent start || true
+        fi
+        ;;
 
     abort-upgrade|abort-deconfigure|abort-remove)
-    ;;
+	    ;;
 
     *)
-    echo "$0 called with unknown argument \`$1'" 1>&2
-    exit 1
-    ;;
+	    echo "$0 called with unknown argument \`$1'" 1>&2
+	    exit 1
+        ;;
 esac
 
 exit 0
