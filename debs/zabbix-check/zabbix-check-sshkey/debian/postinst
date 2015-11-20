@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for cubos-fw
+# postinst script for zabbix-check-sshkey
 #
 # see: dh_installdeb(1)
 
@@ -26,23 +26,22 @@ case "$1" in
         	echo 'zabbix ALL=NOPASSWD:/usr/sbin/zabbix-check-sshkey.sh' >> /etc/sudoers
 	fi
 
-	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
-		invoke-rc.d zabbix-agent stop || true
-		invoke-rc.d zabbix-agent start
-	else
-		/etc/init.d/zabbix-agent stop || true
-                /etc/init.d/zabbix-agent start
-	fi
-  ;;
+        if which invoke-rc.d >/dev/null 2>&1; then
+            invoke-rc.d zabbix-agent stop || true
+            invoke-rc.d zabbix-agent start || true
+        else
+            /etc/init.d/zabbix-agent stop || true
+            /etc/init.d/zabbix-agent start || true
+        fi
+	;;
 
   abort-upgrade|abort-remove|abort-deconfigure)
-    exit 0
-  ;;
+	;;
 
   *)
-    echo "postinst called with unknown argument \`$1'" >&2
-    exit 1
-  ;;
+	echo "postinst called with unknown argument \`$1'" >&2
+	exit 1
+	;;
 
 esac
 
@@ -52,4 +51,3 @@ esac
 #DEBHELPER#
 
 exit 0
-
