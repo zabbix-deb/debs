@@ -4,6 +4,7 @@ tmp=$(mktemp)
 trap "rm $tmp" 0
 #TODO: check other fs
 LANG=C dumpe2fs -h $(cat /proc/mounts | grep ^/ | grep " / " | awk '{print $1}') > $tmp 2>/dev/null
+#findmnt -n --output source /
 
 #Mount count:              1
 #Maximum mount count:      24
