@@ -6,7 +6,7 @@ case "$1" in
         chmod -v +x /usr/sbin/zabbix_check_smart_discover.py
         chmod -v 440 /etc/sudoers.d/zabbix-check-smart
 
-        #remove old version of sudo rigets (pre 1:0.4)
+        #remove old version of sudo rights (pre 1:0.4)
         if grep -q 'zabbix_check_smart_get.py' /etc/sudoers; then
             grep -v 'zabbix_check_smart_get.py' /etc/sudoers > /etc/.sudoers
             mv /etc/.sudoers /etc/sudoers

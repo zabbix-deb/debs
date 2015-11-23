@@ -2,7 +2,7 @@
 
 case "$1" in
     purge|remove)
-		#remove old version of sudo rigets (pre 1:0.4)
+		#remove old version of sudo rights (pre 1:0.4)
 		if grep -q 'zabbix_check_smart_get.py' /etc/sudoers; then
 			grep -v 'zabbix_check_smart_get.py' /etc/sudoers > /etc/.sudoers
 			mv /etc/.sudoers /etc/sudoers
