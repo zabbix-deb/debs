@@ -1,3 +1,9 @@
+zabbix-check-dpkg (0.1~dev8) precise; urgency=low
+
+  * Add check reboot requeiert  
+
+ -- chr <chr@chr-laptop>  Sun, 17 Jan 2016 23:15:36 +0100
+
 zabbix-check-dpkg (0.1~dev7) precise; urgency=low
 
   * Add: apt.conf Post-Invoke 
