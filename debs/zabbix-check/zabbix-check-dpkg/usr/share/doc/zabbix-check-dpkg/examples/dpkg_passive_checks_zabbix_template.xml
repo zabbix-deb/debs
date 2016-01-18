@@ -110,7 +110,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>dpkg reboot requiert</name>
+                    <name>dpkg reboot required</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -258,7 +258,7 @@
         </trigger>
         <trigger>
             <expression>{Template App dpkg:dpkg.reboot.last()}&gt;0</expression>
-            <name>dpkg reboot requeiert on {HOST.NAME}</name>
+            <name>dpkg reboot required on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
