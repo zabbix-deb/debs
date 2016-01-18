@@ -1,8 +1,14 @@
+zabbix-check-dpkg (0.1~dev9) precise; urgency=low
+
+  * Bugfix: add depends: update-notifier-common 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Mon, 18 Jan 2016 08:58:06 +0100
+
 zabbix-check-dpkg (0.1~dev8) precise; urgency=low
 
-  * Add check reboot requeiert  
+  * Add check reboot requeiert
 
- -- chr <chr@chr-laptop>  Sun, 17 Jan 2016 23:15:36 +0100
+ -- Christoph Hueffelmann <chr@istoph.de>  Sun, 17 Jan 2016 23:15:36 +0100
 
 zabbix-check-dpkg (0.1~dev7) precise; urgency=low
 
