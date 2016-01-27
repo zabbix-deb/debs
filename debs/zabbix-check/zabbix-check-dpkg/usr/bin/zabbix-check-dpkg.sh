@@ -31,7 +31,7 @@ trap "rm -f $tmp" 0 1 2 5 15
 apt-get upgrade -s 2>/dev/null > $tmp || (echo $? > $share/error.log; exit 2)
 grep -vi security $tmp | grep ^Inst | wc -l > $share/updates.log
 grep -i security $tmp | grep ^Inst | wc -l > $share/security.log
-apt-get autoremove -s 2>/dev/null | grep ^Conf | wc -l > $share/autoremove.log
+apt-get autoremove -s 2>/dev/null | grep ^Remv | wc -l > $share/autoremove.log
 
 #reboot
 if [ -e /var/run/reboot-required ]; then 

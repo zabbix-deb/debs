@@ -6,7 +6,7 @@ etc/cron.d
 etc/cron.d/zabbix-check-dpkg
 etc/zabbix
 etc/zabbix/zabbix_agentd.d
-etc/zabbix/zabbix_agentd.d/userparameter_dpkg.sh
+etc/zabbix/zabbix_agentd.d/userparameter_dpkg.conf
 usr
 usr/bin
 usr/bin/zabbix-check-dpkg.sh
