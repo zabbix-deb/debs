@@ -1,3 +1,9 @@
+zabbix-check-dpkg (0.1~dev10) precise; urgency=low
+
+  * Bugfix: autoremove count 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 27 Jan 2016 09:55:59 +0100
+
 zabbix-check-dpkg (0.1~dev9) precise; urgency=low
 
   * Bugfix: add depends: update-notifier-common 
