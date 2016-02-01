@@ -25,6 +25,11 @@ case "$1" in
         mkdir -pv $share
         echo 0 | tee $share/error.log | tee $share/updates.log > $share/security.log
 
+	##bugfix version 1.dev11
+	if [ -e /etc/zabbix/zabbix_agentd.d/userparameter_dpkg.sh ];  then
+		rm /etc/zabbix/zabbix_agentd.d/userparameter_dpkg.sh
+	fi
+
         if which invoke-rc.d >/dev/null 2>&1; then
             invoke-rc.d zabbix-agent stop || true
             invoke-rc.d zabbix-agent start || true

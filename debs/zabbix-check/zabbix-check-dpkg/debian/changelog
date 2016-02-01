@@ -1,3 +1,9 @@
+zabbix-check-dpkg (0.1~dev12) precise; urgency=low
+
+  * Bugfix: remove old config 
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Thu, 28 Jan 2016 08:53:59 +0100
+
 zabbix-check-dpkg (0.1~dev11) precise; urgency=low
 
   * Bugfix: autoremove count 
