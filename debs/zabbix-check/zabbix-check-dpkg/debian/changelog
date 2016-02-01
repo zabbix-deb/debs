@@ -1,3 +1,9 @@
+zabbix-check-dpkg (0.1~dev13) precise; urgency=low
+
+  * Bugfix: reboot required togle event problem 
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Mon, 01 Feb 2016 15:46:00 +0100
+
 zabbix-check-dpkg (0.1~dev12) precise; urgency=low
 
   * Bugfix: remove old config 

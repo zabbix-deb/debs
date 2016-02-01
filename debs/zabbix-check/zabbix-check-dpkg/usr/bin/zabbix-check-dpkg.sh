@@ -3,7 +3,7 @@ export LANG=C
 
 share="/usr/share/zabbix/dpkg"
 mkdir -p $share
-echo 0 | tee $share/error.log | tee $share/updates.log | tee $share/autoremove.log | tee $share/reboot.log > $share/security.log 
+echo 0 | tee $share/error.log | tee $share/updates.log | tee $share/autoremove.log > $share/security.log 
 
 function checkrun() {
 	err=0
@@ -19,6 +19,13 @@ function checkrun() {
 	exit 1
 }
 
+#reboot required
+if [ -e /var/run/reboot-required ]; then
+        echo 1 > $share/reboot.log
+else
+        echo 0 > $share/reboot.log
+fi
+
 #check runig updates
 checkrun
 
@@ -32,12 +39,5 @@ apt-get upgrade -s 2>/dev/null > $tmp || (echo $? > $share/error.log; exit 2)
 grep -vi security $tmp | grep ^Inst | wc -l > $share/updates.log
 grep -i security $tmp | grep ^Inst | wc -l > $share/security.log
 apt-get autoremove -s 2>/dev/null | grep ^Remv | wc -l > $share/autoremove.log
-
-#reboot
-if [ -e /var/run/reboot-required ]; then 
-	echo 1 > $share/reboot.log
-else
-	echo 0 > $share/reboot.log
-fi
 
 exit 0
