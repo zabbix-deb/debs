@@ -1,0 +1,25 @@
+zabbix-check-mdadm2 (1:0.1~dev4) trusty; urgency=low
+
+  * Corrected wrong if statement
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Fri, 05 Feb 2016 17:17:03 +0100
+
+zabbix-check-mdadm2 (1:0.1~dev3) trusty; urgency=low
+
+  * mdadm --details some times give more then one state back, which can
+    the script interprate now. It gives back so worst state.
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Fri, 05 Feb 2016 17:01:55 +0100
+
+zabbix-check-mdadm2 (1:0.1~dev2) trusty; urgency=low
+
+  * Replace subprocess.check_output with subprocess Popen, to be compatible 
+    with Python 2.6
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Thu, 04 Feb 2016 18:39:15 +0100
+
+zabbix-check-mdadm2 (1:0.1~dev1) trusty; urgency=low
+
+  * Initial release.
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Thu, 04 Feb 2016 14:13:51 +0100
