@@ -1,3 +1,0 @@
-TODO:
-
-* check rights of zabbix user
