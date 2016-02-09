@@ -1,0 +1,14 @@
+Source: zabbix-check-mdadm2
+Maintainer: Sebastian Huebner <shuebner@benhur.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-mdadm2
+Architecture: all
+Pre-Depends: sudo, zabbix-agent
+Depends: ucf, lsb-base, python (>= 2.6)
+Conflicts: zabbix-check-mdadm
+Description: mdadm monitoring for zabbix
+ Provides a script, which monitore the mdadm software raid and
+ make the data readable for zabbix-agent. dependency package
