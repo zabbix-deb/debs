@@ -3,7 +3,7 @@ import subprocess
 import sys
 import re
 
-smart_key_re = re.compile(r'^\s*\d+ (\w+)\s+0x[a-f0-9]+\s+(\d+).*\s+\-\s+(\d+).*$')
+smart_key_re = re.compile(r'^\s*\d+ (\w+)\s+0x[a-f0-9]+\s+(\d+).*\s+(\d+).*$')
 
 
 if len(sys.argv) <= 2:
