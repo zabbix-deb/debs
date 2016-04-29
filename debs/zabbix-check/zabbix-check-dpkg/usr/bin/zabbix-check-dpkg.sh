@@ -42,6 +42,11 @@ function run() {
 	apt-get autoremove -s 2>/dev/null | grep ^Remv | wc -l > $share/autoremove.log
 }
 
+if [ "$(ps ax | grep $0 | wc -l)" -gt "3" ]; then
+	echo "WARNING: too many processes $0"
+	exit 1
+fi
+
 if [ "$1" == "Post-Invoke" ]; then
 	(sleep 360; run) &
 elif ["$1" == "cron"  ]; then
