@@ -1,0 +1,31 @@
+#!/bin/sh -e
+
+case "$1" in
+    configure)
+
+        chmod +x /usr/sbin/zabbix_check_mdadm2_discover.py
+        chmod +x /usr/sbin/zabbix_check_mdadm2_get.py
+
+        if [ ! -d "/etc/zabbix/zabbix_agentd.d" ]; then
+                mkdir /etc/zabbix/zabbix_agentd.d
+        fi
+
+        if which invoke-rc.d >/dev/null 2>&1; then
+            invoke-rc.d zabbix-agent stop || true
+            invoke-rc.d zabbix-agent start || true
+        else
+            /etc/init.d/zabbix-agent stop || true
+            /etc/init.d/zabbix-agent start || true
+        fi
+    ;;
+
+    abort-upgrade|abort-deconfigure|abort-remove)
+    ;;
+
+    *)
+    echo "$0 called with unknown argument \`$1'" 1>&2
+    exit 1
+    ;;
+esac
+
+exit 0
