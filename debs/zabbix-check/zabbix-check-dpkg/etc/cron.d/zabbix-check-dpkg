@@ -1,2 +1,2 @@
 #zabbix-check-dpkg
-35 * * * * root perl -e 'sleep rand(3000)' && ionice -c3 nice -19 /usr/bin/zabbix-check-dpkg.sh
+35 * * * * root ionice -c3 nice -19 /usr/bin/zabbix-check-dpkg.sh cron

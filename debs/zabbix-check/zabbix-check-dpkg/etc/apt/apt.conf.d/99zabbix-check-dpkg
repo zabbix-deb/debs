@@ -1,1 +1,1 @@
-DPkg::Post-Invoke {"/usr/bin/zabbix-check-dpkg.sh"; };
+DPkg::Post-Invoke {"/usr/bin/zabbix-check-dpkg.sh Post-Invoke"; };
