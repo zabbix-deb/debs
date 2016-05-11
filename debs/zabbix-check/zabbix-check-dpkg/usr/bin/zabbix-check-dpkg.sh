@@ -43,13 +43,13 @@ function run() {
 }
 
 if [ "$(ps ax | grep $0 | wc -l)" -gt "3" ]; then
-	echo "WARNING: too many processes $0"
-	exit 1
+	#echo "WARNING: too many processes $0"
+	exit 0
 fi
 
-if [ "$1" == "Post-Invoke" ]; then
+if [ "$1" = "Post-Invoke" ]; then
 	(sleep 360; run) &
-elif ["$1" == "cron"  ]; then
+elif ["$1" = "cron"  ]; then
 	(perl -e 'sleep rand(3000)'; run) &
 else 
 	run

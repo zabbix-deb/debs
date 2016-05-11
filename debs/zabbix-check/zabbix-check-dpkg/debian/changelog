@@ -1,3 +1,15 @@
+zabbix-check-dpkg (0.1~dev17) precise; urgency=medium
+
+  * Bugfix: line 52: [: ==: unary operator expected 
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Wed, 11 May 2016 07:16:04 +0200
+
+zabbix-check-dpkg (0.1~dev16) precise; urgency=medium
+
+  * Bugfix: check prozess exit code 
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Fri, 29 Apr 2016 11:19:12 +0200
+
 zabbix-check-dpkg (0.1~dev15) precise; urgency=medium
 
   * Add check prozess sum
