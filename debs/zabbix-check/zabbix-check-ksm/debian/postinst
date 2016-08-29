@@ -10,7 +10,18 @@ case "$1" in
         echo "!!! KSM not active !!!"
     fi
 
-    if which invoke-rc.d >/dev/null 2>&1; then
+    conf_file="/etc/zabbix/zabbix_agentd.conf"
+    include_line="Include=/etc/zabbix/zabbix_agentd.d/"
+
+    if [ "$(cat $conf_file | egrep "^#\s*${include_line}$" | wc -l)" -ge "1" ]; then
+        sed -i "s%^#\s*${include_line}$%${include_line}%g" $conf_file
+    elif [ "$(cat $conf_file | egrep "^${include_line}$" | wc -l)" -eq "0" ]; then
+        sed -i "/^#\s*Include=$/a $include_line" $conf_file
+    fi
+
+    if which systemd >/dev/null 2>&1; then
+        systemctl restart zabbix-agent
+    elif which invoke-rc.d >/dev/null 2>&1; then
         invoke-rc.d zabbix-agent stop || true
         invoke-rc.d zabbix-agent start
     else
