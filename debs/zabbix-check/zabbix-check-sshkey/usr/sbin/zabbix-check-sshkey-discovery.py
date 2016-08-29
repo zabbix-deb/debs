@@ -41,7 +41,7 @@ def main():
     homes.append(pwd.getpwuid(0).pw_dir + "/.ssh")
 
     for path in homes:
-        if os.path.isdir(path) and os.path.exists(path + "/authorized_keys"):
+        if os.path.exists(path + "/authorized_keys"):
             returnvalue["data"].append({ "{#SSHAPATH}" : path+"/authorized_keys" })
     print json.dumps(returnvalue)
 
