@@ -18,12 +18,9 @@ def getUIDs(begin):
     uid_re = re.compile(r'^({0})_UID=(\d+)'.format(begin), re.MULTILINE)
     with open(aufile) as f:
         output = f.read()
-    results = uid_re.findall(output)
-    for result in results:
-        if begin == "FIRST":
-            return result[1]
-        elif begin == "LAST":
-            return result[1]
+    result = uid_re.findall(output)
+    uid = dict(result)
+    return uid[begin]
 
 def main():
     uid_first = int(getUIDs("FIRST"))
