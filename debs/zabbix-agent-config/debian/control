@@ -1,0 +1,12 @@
+Source: zabbix-agent-config
+Maintainer: Christoph Hueffelmann <chr@istoph.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-agent-config
+Pre-Depends: zabbix-agent
+Architecture: all
+Description: automatic configure zabbix agent
+  configrue the zabbix agent
+
