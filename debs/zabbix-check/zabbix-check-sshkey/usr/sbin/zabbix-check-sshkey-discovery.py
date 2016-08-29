@@ -14,9 +14,6 @@ import os
 aufile = "/etc/adduser.conf"
 returnvalue = { "data" : [] }
 
-
-homes = {}
-
 def getUIDs(begin):
     uid_re = re.compile(r'^({0})_UID=(\d+)'.format(begin), re.MULTILINE)
     with open(aufile) as f:
