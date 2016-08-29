@@ -1,0 +1,8 @@
+zabbix-agent-config (0.1~dev1) xenial; urgency=medium
+
+  * Initial release.
+  * set:
+    * server = zabbix.caix.de
+    * host = local host name
+
+ -- Christoph Hueffelmann <chr@istoph.de> Mon, 29 Aug 2016 17:31:33 +0200

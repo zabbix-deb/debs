@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_install:
+	dh_install --sourcedir=.
+
+override_dh_installinit:
+	dh_installinit -- defaults 98 02
+
+override_dh_auto_clean:
+	dh_auto_clean
