@@ -28,14 +28,13 @@ def getUIDs(begin):
 def main():
     uid_first = int(getUIDs("FIRST"))
     uid_last = int(getUIDs("LAST"))
-    homes = []
+    homes = ['/root/.ssh']
 
     for uid in range(uid_first, uid_last+1):
         try:
             homes.append(pwd.getpwuid(uid).pw_dir + "/.ssh")
         except:
             continue
-    homes.append(pwd.getpwuid(0).pw_dir + "/.ssh")
 
     for path in homes:
         if os.path.exists(path + "/authorized_keys"):
