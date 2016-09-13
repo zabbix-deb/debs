@@ -1,35 +1,22 @@
 zabbix-check-ksm (1:1.1) xenial; urgency=low
 
-  * xenial release
+  * Xenial release
+  * Updated copyright
+  * Added some checks about the zabbix agent config path to debian/postinst
 
- -- root <root@precise>  Mon, 29 Aug 2016 15:10:01 +0200
-
-zabbix-check-ksm (1:1.1~dev2) xenial; urgency=low
-
-  * fixed typo
-  * fixed sed command
-
- -- Sebastian Huebner <sebastian@hueb-ner.de>  Mon, 29 Aug 2016 14:31:50 +0200
-
-zabbix-check-ksm (1:1.1~dev1) xenial; urgency=low
-
-  * postinst checks if zabbix_agentd.d include line is not available or commented
-    and add or fix it
-  * xenial test
-
- -- Sebastian Huebner <sebastian@hueb-ner.de>  Mon, 29 Aug 2016 14:14:20 +0200
+ -- Sebastian Huebner <shuebner@benhur.de>  Tue, 13 Sep 2016 16:57:44 +0200
 
 zabbix-check-ksm (1:1.0) precise; urgency=low
 
-  * add template
+  * Added template
   * Release
 
  -- Sebastian Huebner <sebastian@hueb-ner.de>  Mon, 14 Sep 2015 15:11:27 +0200
 
 zabbix-check-ksm (1:1~dev2) precise; urgency=low
 
-  * check if ksm in running
-  * add sudo file
+  * Added check if ksm in running to postinst
+  * Added sudo file
 
  -- Sebastian Huebner <sebastian@hueb-ner.de>  Mon, 14 Sep 2015 14:42:11 +0200
 

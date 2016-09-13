@@ -1,3 +1,10 @@
+zabbix-check-mdadm2 (1:0.2) xenial; urgency=low
+
+  * Xenial release
+  * Added some checks about the zabbix agent config path to debian/postinst
+
+ -- Sebastian Huebner <shuebner@benhur.de>  Tue, 13 Sep 2016 17:00:55 +0200
+
 zabbix-check-mdadm2 (1:0.1~dev4) trusty; urgency=low
 
   * Corrected wrong if statement
@@ -13,7 +20,7 @@ zabbix-check-mdadm2 (1:0.1~dev3) trusty; urgency=low
 
 zabbix-check-mdadm2 (1:0.1~dev2) trusty; urgency=low
 
-  * Replace subprocess.check_output with subprocess Popen, to be compatible 
+  * Replace subprocess.check_output with subprocess Popen, to be compatible
     with Python 2.6
 
  -- Sebastian Huebner <shuebner@benhur.de>  Thu, 04 Feb 2016 18:39:15 +0100
