@@ -31,6 +31,12 @@ case "$1" in
         fi
         # end
 
+	# Remove old smart.conf
+	if [ -e $confd_path/smart.conf ]; then 
+		rm $confd_path/smart.conf
+	fi
+	# end
+
         echo "Enable SMART if disabled"
         for hdd in $(ls /dev/ | egrep ^[hs]{1}d[a-z]{1}$); do
             if [ "$(smartctl -i /dev/$hdd | grep Disabled | wc -l)" -gt "0" ]; then

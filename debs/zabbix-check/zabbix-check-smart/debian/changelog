@@ -1,3 +1,12 @@
+zabbix-check-smart (1:0.5.1) xenial; urgency=medium
+
+  * Remove old smart.conf
+    ERROR: cannot add user parameter 
+    "smart.raw[*],sudo /usr/sbin/zabbix_check_smart_get.py $1 $2": 
+    key "smart.raw" already exists
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Thu, 22 Sep 2016 22:01:32 +0200
+
 zabbix-check-smart (1:0.5) xenial; urgency=low
 
   * Xenial release
