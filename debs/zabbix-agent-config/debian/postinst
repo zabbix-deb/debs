@@ -1,5 +1,5 @@
-#!/bin/sh
-# postinst script for cubos-fw
+#!/bin/bash
+# postinst script for zabbix-agent-config
 #
 # see: dh_installdeb(1)
 
@@ -20,10 +20,17 @@ set -e
 case "$1" in
 
   configure)
+	function echo-yello() { echo -e "\e[01;33m$@\e[0m" >&2; }
 
 	if [ ! -f /etc/zabbix/zabbix_agentd.conf ]; then
-		echo "ERROR: NO zabbix_agentd.conf CONFIG"
+		echo-yello "ERROR: NO zabbix_agentd.conf CONFIG"
 		exit 2
+	fi
+	
+	if [ ! -e /etc/zabbix/zabbix_agentd.psk ]; then
+
+		/usr/bin/zabbix-agent-config
+
 	fi
 
 	sed -i 's/^Server=.*/Server=zabbix.caix.de, 213.131.245.67, 10.192.0.30/g' /etc/zabbix/zabbix_agentd.conf

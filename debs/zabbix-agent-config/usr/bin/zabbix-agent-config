@@ -1,0 +1,41 @@
+#!/bin/bash
+
+function echo-yello() { echo -e "\e[01;33m$@\e[0m" >&2; }
+
+if [ ! -f /etc/zabbix/zabbix_agentd.conf ]; then
+	echo-yello "ERROR: NO zabbix_agentd.conf CONFIG"
+	exit 2
+fi
+
+if [ ! -e /etc/zabbix/zabbix_agentd.psk ]; then
+
+	echo "start openssl"
+	openssl rand -hex 32 > /etc/zabbix/zabbix_agentd.psk
+	pskid=$(openssl rand -hex 5)
+
+	echo "TLSConnect=psk
+TLSAccept=psk
+TLSPSKFile=/etc/zabbix/zabbix_agentd.psk
+TLSPSKIdentity=$pskid" > /etc/zabbix/zabbix_agentd.d/zabbix-agent-psk.conf
+
+#	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+#		invoke-rc.d zabbix-agent restart || true
+#	else
+#		/etc/init.d/zabbix-agent restart || true
+#	fi	
+
+else
+	pskid=$(grep 'TLSPSKIdentity' /etc/zabbix/zabbix_agentd.d/zabbix-agent-psk.conf | awk -F'=' '{print $2}')
+if
+
+echo;
+echo-yello "#####################################################################"
+echo-yello "ADD PSK AND PSK ID TO ZABBIX SERVER"
+echo;
+echo-yello "PSKID: $pskid"
+echo-yello "PSK: `cat /etc/zabbix/zabbix_agentd.psk`"
+echo;
+echo-yello "#####################################################################"
+echo;
+
+exit 0
