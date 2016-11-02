@@ -2,40 +2,46 @@
 
 case "$1" in
     configure)
+        chmod +x /usr/sbin/zabbix_check_ksm
+        chmod 440 /etc/sudoers.d/zabbix-check-ksm
 
-    chmod +x /usr/sbin/zabbix_check_ksm
-    chmod 440 /etc/sudoers.d/zabbix-check-ksm
+        # Standartcheck ob Konfig Ordner existiert und
+        # in der zabbix konfig richtig steht
+        # beginn
+        conf_file="/etc/zabbix/zabbix_agentd.conf"
+        confd_path="/etc/zabbix/zabbix_agentd.d/"
+        include_line="Include=$confd_path"
 
-    if [ "$(cat /sys/kernel/mm/ksm/run)" -ne "1" ]; then
-        echo "!!! KSM not active !!!"
-    fi
+        if [ ! -d $confd_path ]; then
+            mkdir $confd_path
+        fi
 
-    conf_file="/etc/zabbix/zabbix_agentd.conf"
-    include_line="Include=/etc/zabbix/zabbix_agentd.d/"
+        if [ "$(cat $conf_file | egrep "^#\s*${include_line}$" | wc -l)" -ge "1" ]; then
+            sed -i "s%^#\s*${include_line}$%${include_line}%g" $conf_file
+        elif [ "$(cat $conf_file | egrep "^${include_line}$" | wc -l)" -eq "0" ]; then
+            sed -i "/^#\s*Include=$/a $include_line" $conf_file
+        fi
+        # end
 
-    if [ "$(cat $conf_file | egrep "^#\s*${include_line}$" | wc -l)" -ge "1" ]; then
-        sed -i "s%^#\s*${include_line}$%${include_line}%g" $conf_file
-    elif [ "$(cat $conf_file | egrep "^${include_line}$" | wc -l)" -eq "0" ]; then
-        sed -i "/^#\s*Include=$/a $include_line" $conf_file
-    fi
+        if [ "$(cat /sys/kernel/mm/ksm/run)" -ne "1" ]; then
+            echo "!!! KSM not active !!!"
+        fi
 
-    if which systemd >/dev/null 2>&1; then
-        systemctl restart zabbix-agent
-    elif which invoke-rc.d >/dev/null 2>&1; then
-        invoke-rc.d zabbix-agent stop || true
-        invoke-rc.d zabbix-agent start
-    else
-        /etc/init.d/zabbix-agent stop || true
-        /etc/init.d/zabbix-agent start
-    fi
+        if which systemctl >/dev/null 2>&1; then
+            systemctl restart zabbix-agent || true
+        elif which invoke-rc.d >/dev/null 2>&1; then
+            invoke-rc.d zabbix-agent stop || true
+            invoke-rc.d zabbix-agent start || true
+        else
+            /etc/init.d/zabbix-agent stop || true
+            /etc/init.d/zabbix-agent start || true
+        fi
     ;;
-
     abort-upgrade|abort-deconfigure|abort-remove)
     ;;
-
     *)
-    echo "$0 called with unknown argument \`$1'" 1>&2
-    exit 1
+        echo "$0 called with unknown argument \`$1'" 1>&2
+        exit 1
     ;;
 esac
 

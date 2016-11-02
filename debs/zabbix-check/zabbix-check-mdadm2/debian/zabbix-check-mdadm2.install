@@ -8,3 +8,7 @@ usr
 usr/sbin
 usr/sbin/zabbix_check_mdadm2_discover.py
 usr/sbin/zabbix_check_mdadm2_get.py
+usr/share
+usr/share/doc
+usr/share/doc/zabbix-check-mdadm2
+usr/share/doc/zabbix-check-mdadm2/zabbix_check_mdadm2_template.xml

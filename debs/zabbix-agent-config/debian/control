@@ -5,7 +5,7 @@ Priority: optional
 Standards-Version: 3.8.4
 
 Package: zabbix-agent-config
-Pre-Depends: zabbix-agent
+Pre-Depends: zabbix-agent (>= 3.0.0), openssl
 Architecture: all
 Description: automatic configure zabbix agent
   configrue the zabbix agent
