@@ -1,0 +1,4 @@
+
+Das zabbix-check-postfix Paket bring unter anderem ein Konfigurationsdatei für den Zabbix Server mit, die einmalig eingespielt werden muss:
+/usr/share/doc/zabbix-check-postfix/examples/smtp_and_postfix_passive_checks_zabbix_template.xml
+

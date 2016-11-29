@@ -1,2 +1,2 @@
 #zabbix-check-postfix logger
-*/5 * * * * root ionice -c3 nice -19 /usr/bin/zabbix-check-postfix.sh
+*/5 * * * * root ionice -c3 nice -19 /usr/lib/zabbix-check/bin/zabbix-check-postfix.sh

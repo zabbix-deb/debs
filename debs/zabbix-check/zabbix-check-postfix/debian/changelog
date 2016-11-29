@@ -1,3 +1,11 @@
+zabbix-check-postfix (0.1~dev10) precise; urgency=medium
+
+  * Add sudo for: 
+    fatal: User zabbix(113) is not allowed to view the mail queue 
+  * Move usr/bin to usr/lib/zabbix-check/bin/
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Tue, 29 Nov 2016 11:12:39 +0100
+
 zabbix-check-postfix (0.1~dev9) precise; urgency=low
 
   * Bugfix: Fix wrong template link

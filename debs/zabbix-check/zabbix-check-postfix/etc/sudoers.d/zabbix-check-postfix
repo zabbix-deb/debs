@@ -1,0 +1,1 @@
+zabbix ALL=NOPASSWD: /usr/lib/zabbix-check/bin/zabbix-check-postfix2.sh
