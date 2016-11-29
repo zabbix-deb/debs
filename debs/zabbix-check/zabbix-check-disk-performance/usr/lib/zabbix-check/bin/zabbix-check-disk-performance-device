@@ -1,0 +1,11 @@
+#!/bin/bash
+
+device=$1
+
+cd /dev/disk/by-id/
+if [ -e "dm-name-$device"  ]; then
+  ls -al dm-name-$device | awk '{print $11}' | cut -c 7-
+else
+  echo $device
+fi
+

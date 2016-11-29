@@ -1,0 +1,12 @@
+Source: zabbix-check-disk-performance
+Maintainer: Christoph Hueffelmann <chr@istoph.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-disk-performance
+Architecture: all
+Depends: zabbix-agent (>=2.0)
+Description: zabbix-agent disk-performance passiv check
+ This checks discover all devices and monitor
+ the performance of it.

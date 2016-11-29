@@ -1,0 +1,5 @@
+zabbix-check-disk-performance (0.1~dev1) jessie; urgency=medium
+
+  * Initial release.
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Tue, 29 Nov 2016 14:22:03 +0100
