@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ls -al /dev/disk/by-id/ | grep -e name -e ata | grep -v '\-part' | while read l; do
+ls -al /dev/disk/by-id/ | grep -e name -e ata -e scsi | grep -v '\-part' | while read l; do
 
 a=$(echo $l | awk '{print $9}')
 b=$(echo $l | awk '{print $11}' | cut -c 7-)
