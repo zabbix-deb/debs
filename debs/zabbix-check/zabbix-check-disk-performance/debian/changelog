@@ -1,4 +1,4 @@
-zabbix-check-disk-performance (0.1~dev1) jessie; urgency=medium
+zabbix-check-disk-performance (0.1~dev1) xenial; urgency=medium
 
   * Initial release.
 

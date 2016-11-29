@@ -6,7 +6,7 @@ Standards-Version: 3.8.4
 
 Package: zabbix-check-disk-performance
 Architecture: all
-Depends: zabbix-agent (>=2.0)
+Depends: zabbix-agent (>=2.0), python
 Description: zabbix-agent disk-performance passiv check
  This checks discover all devices and monitor
  the performance of it.
