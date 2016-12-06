@@ -6,10 +6,8 @@ usr
 usr/lib
 usr/lib/zabbix-check
 usr/lib/zabbix-check/bin
-usr/lib/zabbix-check/bin/zabbix-check-disk-performance
-usr/lib/zabbix-check/bin/zabbix-check-disk-performance-device
-usr/lib/zabbix-check/bin/zabbix-check-disk-performance-discover
 usr/lib/zabbix-check/bin/zabbix-check-disk-performance-discover.py
+usr/lib/zabbix-check/bin/zabbix-check-disk-performance-get.py
 usr/share
 usr/share/doc
 usr/share/doc/zabbix-check-disk-performance
