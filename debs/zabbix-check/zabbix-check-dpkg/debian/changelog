@@ -1,3 +1,9 @@
+zabbix-check-dpkg (0.1~dev18) precise; urgency=medium
+
+  * Depends to Recommends
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Tue, 13 Dec 2016 23:48:36 +0100
+
 zabbix-check-dpkg (0.1~dev17) precise; urgency=medium
 
   * Bugfix: line 52: [: ==: unary operator expected 

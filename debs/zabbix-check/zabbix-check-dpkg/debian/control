@@ -5,7 +5,7 @@ Priority: optional
 Standards-Version: 3.8.4
 
 Package: zabbix-check-dpkg
-Depends: update-notifier-common
+Recommends: update-notifier-common
 Architecture: all
 Description: zabbix check dpkg status
   checking the status of the debian pakagemend system
