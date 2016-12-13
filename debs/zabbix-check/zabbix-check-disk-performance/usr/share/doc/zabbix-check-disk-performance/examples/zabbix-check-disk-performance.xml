@@ -59,7 +59,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[io.active][{#DEVICENAME}]</key>
+                            <key>vfs.dev[io.active,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -104,7 +104,7 @@ The only field that should go to zero. Incremented as requests are given to appr
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[io.ms][{#DEVICENAME}]</key>
+                            <key>vfs.dev[io.ms,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -148,7 +148,7 @@ Number of milliseconds spent doing I/Os. This field increases so long as field #
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[weight.io.ms][{#DEVICENAME}]</key>
+                            <key>vfs.dev[weight.io.ms,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -193,7 +193,7 @@ This field is incremented at each I/O start, I/O completion, I/O merge, or read 
                             <snmp_community/>
                             <multiplier>1</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[read.sectors][{#DEVICENAME}]</key>
+                            <key>vfs.dev[read.sectors,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -237,7 +237,7 @@ This is the total number of sectors read successfully.</description>
                             <snmp_community/>
                             <multiplier>1</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[read][{#DEVICENAME},sectors]</key>
+                            <key>vfs.dev[read,{#DEVICENAME},sectors]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -280,7 +280,7 @@ This is the total number of sectors read successfully.</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[read.merged][{#DEVICENAME}]</key>
+                            <key>vfs.dev[read.merged,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -325,7 +325,7 @@ Reads and writes which are adjacent to each other may be merged for efficiency. 
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[read.ms][{#DEVICENAME}]</key>
+                            <key>vfs.dev[read.ms,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -370,7 +370,7 @@ This is the total number of milliseconds spent by all reads (as measured from __
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[read][{#DEVICENAME},ops]</key>
+                            <key>vfs.dev[read,{#DEVICENAME},ops]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -413,7 +413,7 @@ This is the total number of milliseconds spent by all reads (as measured from __
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[read.ops][{#DEVICENAME}]</key>
+                            <key>vfs.dev[read.ops,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -457,7 +457,7 @@ This is the total number of reads completed successfully.</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[read][{#DEVICENAME},operations]</key>
+                            <key>vfs.dev[read,{#DEVICENAME},operations]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -500,7 +500,7 @@ This is the total number of reads completed successfully.</description>
                             <snmp_community/>
                             <multiplier>1</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[write.sectors][{#DEVICENAME}]</key>
+                            <key>vfs.dev[write.sectors,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -544,7 +544,7 @@ This is the total number of sectors written successfully.</description>
                             <snmp_community/>
                             <multiplier>1</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[write][{#DEVICENAME},sectors]</key>
+                            <key>vfs.dev[write,{#DEVICENAME},sectors]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -587,7 +587,7 @@ This is the total number of sectors written successfully.</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[write.merged][{#DEVICENAME}]</key>
+                            <key>vfs.dev[write.merged,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -632,7 +632,7 @@ Reads and writes which are adjacent to each other may be merged for efficiency. 
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[write.ms][{#DEVICENAME}]</key>
+                            <key>vfs.dev[write.ms,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -677,7 +677,7 @@ This is the total number of milliseconds spent by all writes (as measured from _
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[write][{#DEVICENAME},ops]</key>
+                            <key>vfs.dev[write,{#DEVICENAME},ops]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -720,7 +720,7 @@ This is the total number of milliseconds spent by all writes (as measured from _
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[write.ops][{#DEVICENAME}]</key>
+                            <key>vfs.dev[write.ops,{#DEVICENAME}]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -764,7 +764,7 @@ This is the total number of writes completed successfully.</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.dev[write][{#DEVICENAME},operations]</key>
+                            <key>vfs.dev[write,{#DEVICENAME},operations]</key>
                             <delay>60</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -831,7 +831,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[read.sectors][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[read.sectors,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -843,7 +843,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[write.sectors][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[write.sectors,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -875,7 +875,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[read.merged][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[read.merged,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -887,7 +887,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[write.merged][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[write.merged,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -919,7 +919,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[read.ops][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[read.ops,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -931,7 +931,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[write.ops][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[write.ops,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -963,7 +963,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[io.active][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[io.active,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -975,7 +975,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[read.sectors][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[read.sectors,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -987,7 +987,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[read.merged][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[read.merged,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -999,7 +999,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[read.ops][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[read.ops,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1011,7 +1011,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[write.sectors][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[write.sectors,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1023,7 +1023,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[write.merged][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[write.merged,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1035,7 +1035,7 @@ This is the total number of writes completed successfully.</description>
                                     <type>0</type>
                                     <item>
                                         <host>Template Disk Performance</host>
-                                        <key>vfs.dev[write.ops][{#DEVICENAME}]</key>
+                                        <key>vfs.dev[write.ops,{#DEVICENAME}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>

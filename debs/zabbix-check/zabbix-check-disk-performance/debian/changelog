@@ -1,3 +1,17 @@
+zabbix-check-disk-performance (0.1~dev3) xenial; urgency=medium
+
+  * zabbix-check-disk-performance: python version 
+  * fix: xml and build system
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Tue, 06 Dec 2016 22:10:16 +0100
+
+zabbix-check-disk-performance (0.1~dev2) xenial; urgency=medium
+
+  * Add scsi support
+  * Bugfixes
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Tue, 29 Nov 2016 23:58:15 +0100
+
 zabbix-check-disk-performance (0.1~dev1) xenial; urgency=medium
 
   * Initial release.
