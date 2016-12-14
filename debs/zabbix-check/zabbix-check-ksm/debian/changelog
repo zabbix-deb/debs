@@ -1,3 +1,10 @@
+zabbix-check-ksm (1:1.2) xenial; urgency=low
+
+  * Deleted sudo dependency
+  * Moved script to new location under /usr/lib/zabbix-check/bin/
+
+ -- Sebastian Huebner <sebastian@hueb-ner.de>  Wed, 14 Dec 2016 10:13:56 +0100
+
 zabbix-check-ksm (1:1.1) xenial; urgency=low
 
   * Xenial release
