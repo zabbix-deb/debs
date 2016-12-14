@@ -1,7 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
-value=$1
+fail_ () {
+	echo "ZBX_NOTSUPPORTED"
+	exit 1
+}
 
-cat /sys/kernel/mm/ksm/$value 2> /dev/null || echo "ZBX_NOTSUPPORTED"
+[ $# -eq 1 ] || fail_
+[ -d /sys/kernel/mm/ksm ] || fail_
+
+read value 2>/dev/null </sys/kernel/mm/ksm/$1 && printf $value || fail_
 
 exit 0

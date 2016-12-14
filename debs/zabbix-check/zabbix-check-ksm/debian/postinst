@@ -3,7 +3,6 @@
 case "$1" in
     configure)
         chmod +x /usr/sbin/zabbix_check_ksm
-        chmod 440 /etc/sudoers.d/zabbix-check-ksm
 
         # Standartcheck ob Konfig Ordner existiert und
         # in der zabbix konfig richtig steht
