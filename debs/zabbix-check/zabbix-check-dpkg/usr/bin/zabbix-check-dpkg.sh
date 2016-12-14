@@ -49,7 +49,7 @@ fi
 
 if [ "$1" = "Post-Invoke" ]; then
 	(sleep 360; run) &
-elif ["$1" = "cron"  ]; then
+elif [ "$1" = "cron" ]; then
 	(perl -e 'sleep rand(3000)'; run) &
 else 
 	run
