@@ -1,6 +1,7 @@
-zabbix-check-dpkg (0.1~dev19) ; urgency=low
+zabbix-check-dpkg (0.1~dev19) precise; urgency=low
 
-  * Bugfix: line 52: [: ==: unary operator expected (this time for real) (closes: #2)
+  * Bugfix: line 52: [: ==: unary operator expected 
+    (this time for real) (closes: #2)
 
  -- Sebastian Huebner <sebastian@hueb-ner.de>  Wed, 14 Dec 2016 09:49:22 +0100
 

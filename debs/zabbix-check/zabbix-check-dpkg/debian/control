@@ -8,5 +8,5 @@ Package: zabbix-check-dpkg
 Recommends: update-notifier-common
 Architecture: all
 Description: zabbix check dpkg status
-  checking the status of the debian pakagemend system
+ checking the status of the debian pakagemend system
 
