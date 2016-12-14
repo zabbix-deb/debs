@@ -5,7 +5,7 @@ case "$1" in
     ;;
     remove|purge)
         if which systemctl >/dev/null 2>&1; then
-            systemctl restart zabbix-agent || true
+            deb-systemd-invoke restart zabbix-agent.service || true
         elif which invoke-rc.d >/dev/null 2>&1; then
             invoke-rc.d zabbix-agent stop || true
             invoke-rc.d zabbix-agent start || true
