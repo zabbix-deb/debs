@@ -6,7 +6,7 @@ Standards-Version: 3.8.4
 
 Package: zabbix-check-ksm
 Architecture: all
-Pre-Depends: sudo, zabbix-agent
+Pre-Depends: zabbix-agent
 Depends: ucf, lsb-base
 Description: KSM monitoring script for zabbix
  Provides a script, to monitore the KSM (Kernel Samepage Merging).
