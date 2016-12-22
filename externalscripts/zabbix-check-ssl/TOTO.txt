@@ -1,3 +1,2 @@
 * check openssl date
-* tlsa check
 * security
