@@ -1,0 +1,11 @@
+Source: zabbix-check-spamassassin
+Maintainer: Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-spamassassin
+Architecture: all
+Depends: lsb-base
+Description: zabbix check for spamassassin
+  This zhabbix check is for spamassassin services

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ "$(netstat -ltn | grep 783 | wc -l)" -gt "0" ]; then 
+	/etc/init.d/spamassassin status >/dev/null 2>&1
+	r=$?
+	if [ $r -eq 0 ]; then
+		echo 1
+	elif [ $r -eq 1 ]; then
+		echo 0
+	else
+		echo $r
+	fi
+else
+	echo 0
+fi

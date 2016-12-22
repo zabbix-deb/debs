@@ -1,0 +1,5 @@
+zabbix-check-spamassassin (0.1~dev1) jessie; urgency=medium
+
+  * Initial release.
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Wed, 01 Jun 2016 09:12:44 +0200
