@@ -1,8 +1,14 @@
+zabbix-agent-config (0.1~dev7) xenial; urgency=medium
+
+  * bugix: /usr/bin/zabbix-agent-config: Zeile 42 
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Fri, 30 Dec 2016 20:07:31 +0100
+
 zabbix-agent-config (0.1~dev6) xenial; urgency=medium
 
   * add zabbix-agent-config script for psk ids 
 
- -- chr <chr@chr-laptop>  Wed, 12 Oct 2016 23:19:17 +0200
+ -- Christoph Hueffelmann <chr@istoph.de>  Wed, 12 Oct 2016 23:19:17 +0200
 
 zabbix-agent-config (0.1~dev5) xenial; urgency=medium
 
