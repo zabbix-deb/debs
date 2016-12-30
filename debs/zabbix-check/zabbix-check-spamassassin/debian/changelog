@@ -1,3 +1,10 @@
+zabbix-check-spamassassin (0.1~dev2) jessie; urgency=medium
+
+  * move bin to usr/lib/
+  * add examples
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Fri, 30 Dec 2016 23:29:42 +0100
+
 zabbix-check-spamassassin (0.1~dev1) jessie; urgency=medium
 
   * Initial release.

@@ -21,7 +21,7 @@ case "$1" in
 
   configure)
 
-	chmod +x /usr/bin/zabbix-check-spamassassin
+	chmod +x /usr/lib/zabbix-check/bin/zabbix-check-spamassassin
 
 	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
 		invoke-rc.d zabbix-agent restart || true

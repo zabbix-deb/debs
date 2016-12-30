@@ -3,5 +3,12 @@ etc/zabbix
 etc/zabbix/zabbix_agentd.d
 etc/zabbix/zabbix_agentd.d/userparameter_spamassassin.sh
 usr
-usr/bin
-usr/bin/zabbix-check-spamassassin
+usr/lib
+usr/lib/zabbix-check
+usr/lib/zabbix-check/bin
+usr/lib/zabbix-check/bin/zabbix-check-spamassassin
+usr/share
+usr/share/doc
+usr/share/doc/zabbix-check-spamassassin
+usr/share/doc/zabbix-check-spamassassin/examples
+usr/share/doc/zabbix-check-spamassassin/examples/zabbix-check-spamassassin.xml
