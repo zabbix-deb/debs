@@ -1,3 +1,11 @@
+zabbix-check-postfix (0.1~dev11) precise; urgency=medium
+
+  * Add postfix.activedeferred to check count of deferred in mailq
+  * Update XML to Zabbix version 3
+  * Add sudoers.d includedir warning
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Wed, 11 Jan 2017 09:31:23 +0100
+
 zabbix-check-postfix (0.1~dev10) precise; urgency=medium
 
   * Add sudo for: 

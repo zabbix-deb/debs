@@ -22,6 +22,17 @@ case "$1" in
     configure)
         chmod -v +x /usr/lib/zabbix-check/bin/zabbix-check-postfix.sh
 	chmod -v +x /usr/lib/zabbix-check/bin/zabbix-check-postfix2.sh
+	chmod 440 /etc/sudoers.d/zabbix-check-postfix
+
+	#check sudoers.d
+	if ! grep -q '^#includedir /etc/sudoers.d' /etc/sudoers; then
+		echo 'Warning: Please add #includedir /etc/sudoers.d to /etc/sudoers
+ 
+# See sudoers(5) for more information on "#include" directives:
+#includedir /etc/sudoers.d
+
+'
+	fi
 
         if which invoke-rc.d >/dev/null 2>&1; then
             invoke-rc.d zabbix-agent stop || true
