@@ -1,3 +1,11 @@
+zabbix-check-disk-performance (0.1~dev4) xenial; urgency=medium
+
+  * Add lisens
+  * Fix dpkg-old
+  * New zabbix-check-disk-performance.xml 
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Thu, 08 Dec 2016 01:08:23 +0100
+
 zabbix-check-disk-performance (0.1~dev3) xenial; urgency=medium
 
   * zabbix-check-disk-performance: python version 

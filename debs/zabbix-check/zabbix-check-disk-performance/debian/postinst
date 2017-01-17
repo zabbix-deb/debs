@@ -23,6 +23,11 @@ case "$1" in
         chmod -v +x /usr/lib/zabbix-check/bin/zabbix-check-disk-performance-get.py
 	chmod -v +x /usr/lib/zabbix-check/bin/zabbix-check-disk-performance-discover.py
 
+        #Bugfix: if dpkg-old in zabbix_agentd.d directory 
+	if ls /etc/zabbix/zabbix_agentd.d/*.dpkg-old 1>/dev/null 2>/dev/null; then
+	    mv -v /etc/zabbix/zabbix_agentd.d/*.dpkg-old /etc/zabbix/
+	fi
+
         if which invoke-rc.d >/dev/null 2>&1; then
             invoke-rc.d zabbix-agent stop || true
             invoke-rc.d zabbix-agent start || true
