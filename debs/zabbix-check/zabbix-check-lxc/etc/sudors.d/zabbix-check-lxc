@@ -1,0 +1,3 @@
+zabbix  ALL=(ALL) NOPASSWD:/usr/bin/lxc-info
+zabbix  ALL=(ALL) NOPASSWD:/usr/bin/lxc-ls
+

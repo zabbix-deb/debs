@@ -9,4 +9,4 @@ Architecture: all
 Pre-Depends: sudo, zabbix-agent
 Depends: ucf, lsb-base, lxc, python (>= 2.6)
 Description: LXC monitoring script for zabbix
-  Provide a script to monitore LinuX Containers
+ Provide a script to monitore LinuX Containers

@@ -1,0 +1,10 @@
+usr
+usr/sbin
+usr/sbin/zabbix-check-lxc-discover.py
+usr/sbin/zabbix-check-lxc-get.py
+usr/sbin/zabbix-check-lxc-pid.sh
+usr/share
+usr/share/doc
+usr/share/doc/zabbix-check-lxc
+usr/share/doc/zabbix-check-lxc/examples
+usr/share/doc/zabbix-check-lxc/examples/zabbix-check-lxc.xml
