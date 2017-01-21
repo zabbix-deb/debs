@@ -1,0 +1,75 @@
+#!/bin/bash
+
+res=$1
+class=$2
+
+l=$(cat /proc/drbd | grep -A1 "^\ *${res}:" | tr '\n' ' ')
+
+case $class in
+	cs)
+		echo $l | awk '{print $2}' | awk -F':' '{print $2}'
+		;;
+
+	ro)
+		echo $l | awk '{print $3}' | awk -F':' '{print $2}'
+		;;
+
+	ds)
+		echo $l | awk '{print $4}' | awk -F':' '{print $2}'
+		;;
+
+	ns)
+		echo $l | awk '{print $7}' | awk -F':' '{print $2}'
+		;;
+
+	nr)
+		echo $l | awk '{print $8}' | awk -F':' '{print $2}'
+		;;
+
+	dw)
+		echo $l | awk '{print $9}' | awk -F':' '{print $2}'
+		;;
+
+	dr)
+		echo $l | awk '{print $10}' | awk -F':' '{print $2}'
+		;;
+
+	al)
+		echo $l | awk '{print $11}' | awk -F':' '{print $2}'
+		;;
+
+	bm)
+		echo $l | awk '{print $12}' | awk -F':' '{print $2}'
+		;;
+
+	lo)
+		echo $l | awk '{print $13}' | awk -F':' '{print $2}'
+		;;
+	
+	pe)
+		echo $l | awk '{print $14}' | awk -F':' '{print $2}'
+		;;
+
+	ua)
+		echo $l | awk '{print $15}' | awk -F':' '{print $2}'
+		;;
+
+	ap)
+		echo $l | awk '{print $16}' | awk -F':' '{print $2}'
+		;;
+
+	ep)
+		echo $l | awk '{print $17}' | awk -F':' '{print $2}'
+		;;
+	
+	wo)
+		echo $l | awk '{print $18}' | awk -F':' '{print $2}'
+		;;
+
+	oos)
+		echo $l | awk '{print $19}' | awk -F':' '{print $2}'
+		;;
+	*)
+		echo "Error"
+		;;
+esac

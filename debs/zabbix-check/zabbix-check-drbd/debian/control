@@ -1,0 +1,12 @@
+Source: zabbix-check-drbd
+Maintainer: Christoph Hueffelmann <chr@istoph.de>
+Section: net
+Priority: optional
+Standards-Version: 3.8.4
+
+Package: zabbix-check-drbd
+Architecture: all
+Depends: zabbix-agent (>=2.0), drbd-utils | drbd8-utils
+Description: zabbix-agent drbd passiv check
+ This checks look to all /proc/drbd statien.
+ It discover all activ drbds

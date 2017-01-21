@@ -1,0 +1,21 @@
+This package is currently maintained by Christoph Hueffelmann <chr@istoph.de> 2017
+
+It is designed for the software from: 
+http://www.zabbix.com/ 
+
+Copyright: 
+
+  Copyright (C) 2017 
+  Changes: Christoph Hueffelmann <chr@istoph.de> 
+
+
+License: 
+
+  Zabbix is an enterprise-class open source distributed monitoring solution. 
+  This program is free software; you can redistribute it and/or modify 
+  it under the terms of the GNU General Public License version 2 as 
+  published by the Free Software Foundation. 
+
+  On Debian GNU/Linux systems, the complete text of the GNU General 
+  Public License can be found in `/usr/share/common-licenses/GPL-2'.
+  
