@@ -1,3 +1,9 @@
+zabbix-check-drbd (0.1~dev2) xenial; urgency=medium
+
+  * Bugfix: discover add filter by integer 
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Sun, 22 Jan 2017 22:01:28 +0100
+
 zabbix-check-drbd (0.1~dev1) xenial; urgency=medium
 
   * Initial release.

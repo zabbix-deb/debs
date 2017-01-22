@@ -6,6 +6,7 @@ echo '{
 
 drbd-overview | awk -F ':' '{print $1}' | while read -e l; do
 	if [ "$i" -gt "0" ]; then echo ","; fi
+	if ! [ "$l" -eq "$l" ] 2>/dev/null; then continue; fi
 	i=1
 	echo -n '{ "{#RES}" : "' 
 	echo -n $l 
