@@ -1,0 +1,11 @@
+zabbix-check-fs (0.1~dev2) xenial; urgency=medium
+
+  * Fix tmpfs  
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Wed, 15 Feb 2017 13:41:07 +0100
+
+zabbix-check-fs (0.1~dev1) xenial; urgency=medium
+
+  * Initial release.
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Wed, 15 Feb 2017 10:43:20 +0100

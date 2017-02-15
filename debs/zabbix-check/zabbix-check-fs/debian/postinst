@@ -20,10 +20,10 @@ set -e
 case "$1" in
 
     configure)
-        chmod -v +x /usr/bin/zabbix-check-fs.sh
-        /usr/bin/zabbix-check-fs.sh > /usr/share/zabbix/fsck
-        chown zabbix: /usr/share/zabbix/fsck
         
+        /usr/lib/zabbix-check/bin/zabbix-check-fsck.sh > /usr/share/zabbix/fsck
+        chown zabbix:zabbix /usr/share/zabbix/fsck
+
         if which invoke-rc.d >/dev/null 2>&1; then
             invoke-rc.d zabbix-agent stop || true
             invoke-rc.d zabbix-agent start || true

@@ -1,2 +1,2 @@
-#zabbix-check-fs logger
-30 */6 * * * root /usr/bin/zabbix-check-fs.sh > /usr/share/zabbix/fsck
+#zabbix-check-fs
+30 */6 * * * root /usr/lib/zabbix-check/bin/zabbix-check-fsck.sh > /usr/share/zabbix/fsck

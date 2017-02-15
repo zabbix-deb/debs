@@ -7,6 +7,6 @@ Standards-Version: 3.8.4
 Package: zabbix-check-fs
 Architecture: all
 Depends: lsb-base, zabbix-agent
-Description: monitor zabbix filesystem infomations
-  first if fsck start at reboot
-
+Description: monitor filesystem infomations
+ count if a fsck run at reboot
+ and cont if a fs is ro
