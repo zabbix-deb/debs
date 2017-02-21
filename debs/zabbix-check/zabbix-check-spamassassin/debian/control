@@ -6,6 +6,6 @@ Standards-Version: 3.8.4
 
 Package: zabbix-check-spamassassin
 Architecture: all
-Depends: lsb-base
+Depends: lsb-base, socat
 Description: zabbix check for spamassassin
  This zabbix check is for spamassassin services

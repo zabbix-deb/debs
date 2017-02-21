@@ -1,3 +1,9 @@
+zabbix-check-spamassassin (0.1~dev3) jessie; urgency=medium
+
+  * new check UNIX-CONNECT:/var/run/spamd.sock 
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Tue, 21 Feb 2017 14:29:55 +0100
+
 zabbix-check-spamassassin (0.1~dev2) jessie; urgency=medium
 
   * move bin to usr/lib/
