@@ -24,7 +24,8 @@ case "$1" in
 	share="/usr/share/zabbix/confixx"
 	mkdir -pv $share
 
-	chown -vR zabbix:zabbix /usr/share/zabbix
+	chown -v zabbix:zabbix /usr/share/zabbix
+	chown -vR zabbix:zabbix $share
 
 	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
 		invoke-rc.d zabbix-agent restart || true

@@ -1,3 +1,10 @@
+zabbix-check-confixx (0.1~dev3) stretch; urgency=medium
+
+  * Add SN and Key Value
+  * Chech chmod parameters
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Tue, 14 Nov 2017 10:22:37 +0100
+
 zabbix-check-confixx (0.1~dev2) precise; urgency=low
 
   * Bugfix: cornjob  

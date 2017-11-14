@@ -1,1 +1,3 @@
 */10 * * * * root /root/confixx/confixx_counterscript.pl 2>/dev/null; echo $? > /usr/share/zabbix/confixx/lizenz
+0 0 * * * root grep '^\$SN' /root/confixx/admin/contrib/auto_reg.pl | awk -F '=' '{print $2}' | awk -F "\'" '{print $2}' > /usr/share/zabbix/confixx/sn
+0 0 * * * root grep '^\$KEY' /root/confixx/admin/contrib/auto_reg.pl | awk -F '=' '{print $2}' | awk -F "\'" '{print $2}' > /usr/share/zabbix/confixx/key
