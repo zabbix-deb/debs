@@ -23,7 +23,7 @@ case "$1" in
         chmod +x /usr/bin/zabbix-check-dpkg.sh
         share="/usr/share/zabbix/dpkg"
         mkdir -pv $share
-        echo 0 | tee $share/error.log | tee $share/updates.log > $share/security.log
+	echo 0 | tee $share/error.log | tee $share/updates.log | tee $share/autoremove.log | tee $share/reboot.log > $share/security.log
 
 	##bugfix version 1.dev11
 	if [ -e /etc/zabbix/zabbix_agentd.d/userparameter_dpkg.sh ];  then

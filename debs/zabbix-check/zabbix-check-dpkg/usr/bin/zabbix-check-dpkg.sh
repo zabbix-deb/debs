@@ -3,8 +3,7 @@ export LANG=C
 
 function run() {
 	share="/usr/share/zabbix/dpkg"
-	mkdir -p $share
-	echo 0 | tee $share/error.log | tee $share/updates.log | tee $share/autoremove.log > $share/security.log 
+	echo 0 | tee $share/error.log | tee $share/updates.log | tee $share/autoremove.log | tee $share/reboot.log > $share/security.log 
 
 	function checkrun() {
 		err=0

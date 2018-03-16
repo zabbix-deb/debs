@@ -1,3 +1,9 @@
+zabbix-check-dpkg (0.1~dev20) xenial; urgency=medium
+
+  * Add all default itoms with zero
+
+ -- Christoph Hueffelmann <chr@istoph.de>  Fri, 16 Mar 2018 12:06:14 +0100
+
 zabbix-check-dpkg (0.1~dev19) precise; urgency=low
 
   * Bugfix: line 52: [: ==: unary operator expected 
