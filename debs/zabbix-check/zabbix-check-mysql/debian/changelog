@@ -1,0 +1,22 @@
+zabbix-check-mysql (0.1~dev3) stretch; urgency=medium
+
+  * make cedentials script reinstallble
+
+  * remove old userparameter_mysql.conf
+    older versions of zabbix-agent have installd the userparameter_mysql.conf by default
+    it configts with zabbix-check-mysql
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Tue, 20 Mar 2018 09:05:23 +0100
+
+zabbix-check-mysql (0.1~dev2) stretch; urgency=medium
+
+  * trying to overwrite  '/etc/zabbix/zabbix_agentd.d/userparameter_mysql.conf', 
+    which is also in package zabbix-agent 1:2.2.5-1+squeeze
+ 
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Mon, 19 Mar 2018 14:29:06 +0100
+
+zabbix-check-mysql (0.1~dev1) stretch; urgency=medium
+
+  * Initial release.
+
+ -- Christoph Hueffelmann <christoph.hueffelmann@cubos-internet.de>  Mon, 19 Mar 2018 13:48:52 +0100
