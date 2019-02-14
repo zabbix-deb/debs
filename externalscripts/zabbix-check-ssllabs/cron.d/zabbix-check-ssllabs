@@ -1,0 +1,2 @@
+# Renames every host found in /etc/zabbix/zabbix-check-ssllabs.db
+0 1     * * *    root   /etc/zabbix/externalscripts/zabbix-check-ssllabs.lua -u
