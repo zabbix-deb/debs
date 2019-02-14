@@ -1,18 +1,18 @@
-### Dependencies
+## Dependencies
 
 * lua (>= 5.1)
 * [lua-ssllabs](https://github.com/imolein/lua-ssllabs) (>= 0.2-0)
 
-### Installation
+## Installation
 
-#### Manual
+### Manual
 
 * Install lua
 * Install [luarocks](https://github.com/luarocks/luarocks/wiki/Documentation#Quick_start) (You need luarocks >=3.0.0)
 * Install lua-ssllabs: `luarocks install lua-ssllabs`
 * Download this script: `wget -P /etc/zabbix/externalscripts/ https://raw.githubusercontent.com/zabbix-deb/debs/master/externalscripts/zabbix-check-ssllabs/zabbix-check-ssllabs.lua`
 
-### Usage
+## Usage
 
 * To check a host, run `lua zabbix-check-ssllabs.lua -h example.com`
    * It returns the grade if it is found in the local cache file. If it is not found and not cached by ssllabs, it returns "NA". In case of error it return "ERR".
@@ -21,9 +21,9 @@
 
 *Note:* If the given host has multiple endpoints, the worst grade of all endpoints is returned. For example: IPv4 endpoint has a grade of "A+" and IPv6 endpoint a grade of "A-", the script returns "A-"
 
-### How it work
+## How it work
 
-#### zabbix-check-ssllabs.lua -h example.com
+### zabbix-check-ssllabs.lua -h example.com
 
 * The cache file is looked up for the host
 * If host is found and has a grade as value, it returns the grade
@@ -32,14 +32,14 @@
 * If there is not cached result and a new assessment is started, "NA" is returned and the host is written to the cache file with an empty grade
 * If something went wrong during the assessment, "ERR" is returned
 
-#### zabbix-check-ssllabs.lua -u
+### zabbix-check-ssllabs.lua -u
 
 * For every host in the cache file, an assessment is started
 * If there are more than 5 hosts in your cache file, only 5 assessments get started at once
 * Every 20s it checks the status of the assessment and if one is ready, the grade is saved and a next assessment is started
 * If all assessments are done the cache file is renewed
 
-### TODO
+## TODO
 
 * maybe make some stuff configurable, like the seconds between the status checks, the maxAge and the location of cache file
 * make a debian package
