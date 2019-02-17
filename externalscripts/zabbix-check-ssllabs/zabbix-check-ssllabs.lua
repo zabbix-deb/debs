@@ -68,8 +68,6 @@ end
 -- if there is no cached result on ssllabs, a new assessment gets started automatically. Cause an assessment takes long
 -- it returns 'NA' and adds the host with an empty grade to the database
 function Check:single(host)
-  -- if host == '' update only the grade and don't write new line
-  -- I guess we have to write the whole file every time to prevent this
   if not self.db[host] or self.db[host] == '' then
     local resp = ssll.from_cache(host, 46)
 
@@ -160,9 +158,8 @@ end
 -- checks is then used renew_grades()
 function Check:_generate_checks()
   for host in pairs(self.db) do
-
     table.insert(self.checks, coroutine.create(function()
-      local opts = { host = host, startNew = nil }
+      local opts = { host = host, startNew = true }
       local resp, err = ssll.analyze(opts)
       opts.startNew = nil
 
