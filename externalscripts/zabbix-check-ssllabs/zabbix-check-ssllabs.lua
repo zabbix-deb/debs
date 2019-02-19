@@ -3,7 +3,25 @@
 local ssll = require('ssllabs')
 local sleep = require('socket').sleep
 
+---
+-- Edit here if you want to change something
+---
+-- Path for the cache file
 local DB_FILE = '/etc/zabbix/zabbix-check-ssllabs.db'
+-- Max concurrent assessments (if the number is to high, you'll hit the rate limit')
+local MAX_CONCURRENT = 2
+
+
+---
+-- Some constants
+---
+local ERRORS = {
+  ['400'] = 'Invocation error (wrong arguments?)',
+  ['429'] = 'Client request rate too high or too many new assessments too fast',
+  ['500'] = 'Internal error',
+  ['503'] = 'Service is not available',
+  ['529'] = 'Service is overloaded'
+}
 
 
 ----
@@ -104,20 +122,24 @@ function Check:renew_grades()
   while true do
     local noc = #self.checks
 
-    local query = ( noc > 5 and 5 ) or noc
+    local query = ( noc > MAX_CONCURRENT and MAX_CONCURRENT ) or noc
 
     if noc == 0 then break end
 
     for i = 1, query do
-      local _, resp = coroutine.resume(self.checks[i])
+      local _, resp, err = coroutine.resume(self.checks[i])
 
-      if resp.status ~= 'DNS' and resp.status ~= 'IN_PROGRESS' then
+      if type(resp) == 'table' and resp.status ~= 'DNS' and resp.status ~= 'IN_PROGRESS' then
         new_grades[resp.host] = ( resp.status == 'READY' and _worst_grade(resp.endpoints) ) or 'ERR'
 
         table.remove(self.checks, i)
 
         break
+      elseif type(resp) == 'string' and err then
+        io.write(string.format('ERROR for %s: %s\n', resp, err))
       end
+
+      sleep(1)
     end
 
     sleep(20)
@@ -164,7 +186,7 @@ function Check:_generate_checks()
       opts.startNew = nil
 
       while true do
-        if not resp and err then return 'ERROR' end
+        if not resp and err then return host, ERRORS[tostring(err)] end
 
         coroutine.yield(resp)
 
